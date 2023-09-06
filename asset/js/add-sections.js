@@ -1,4 +1,4 @@
-function loadSections(url, section, errMessage){
+function loadSections(url, errMessage, callback){
     function load() {
         return new Promise((resolve, reject) => {
             var xhr = new XMLHttpRequest();
@@ -17,13 +17,15 @@ function loadSections(url, section, errMessage){
     }
     load()
         .then((section) => {
-            // Вставляем хедер в документ
+            // add section
             document.body.insertAdjacentHTML('beforeend', section);
+            if (typeof callback === 'function') {
+                callback();
+            }
         })
         .catch((error) => {
             console.error(errMessage, error);
         });
 }
-// loadSections(url, section, errMessage);
 
 export default loadSections;
