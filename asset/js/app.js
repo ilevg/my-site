@@ -1,7 +1,18 @@
 
 // Функция для загрузки хедера
-// import loadSections from './add-sections.js';
+import loadSections from './add-sections.js';
 
+const url = '../../html/header.html';
+const errMessage = 'Error loading header:';
+
+function afterSectionLoaded() {
+    document.addEventListener('mousemove', apply3DChanges);
+    playSound();
+    toggleNavigation();
+}
+loadSections(url, errMessage, afterSectionLoaded)
+
+        
 //Функция для применения 3D эффектов
 function apply3DChanges(e) {
     Object.assign(document.documentElement, {
@@ -46,21 +57,3 @@ function toggleNavigation() {
     });
 }
 
-// Загружаем хедер и выполняем дополнительные действия после успешной загрузки
-// const url = '../../html/shop/header.html';
-// const errMessage = 'Error loading header:';
-// const section = 'headerHtml';
-// loadSections(url, section, errMessage)
-    // .then(() => {
-    //     // Обработчик для 3D эффектов при движении мыши
-    //     document.addEventListener('mousemove', apply3DChanges);
-
-    //     // Воспроизведение звука и анимации лого
-    //     playSound();
-
-    //     // Переключение видимости навигации
-    //     toggleNavigation();
-    // })
-    // .catch((error) => {
-    //     console.error('errMessage', error);
-    // });
