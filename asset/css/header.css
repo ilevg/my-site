@@ -1,0 +1,71 @@
+body{
+    background-color: black;
+    color: #fff;
+}
+:root{
+    --index: calc(1vw + 1vh);
+}
+.nav__logo_cont{
+    position: relative;
+    background-color: transparent;
+    padding: 0 0 0 10px ;
+
+}
+.nav__logo{
+    width: calc(var(--index) * 4);
+    background-color: transparent;
+}
+
+.nav__section{
+    position: fixed;
+    z-index: 100;
+    margin: calc(var(--index) * 1) 0 0 calc(var(--index) * 1);
+    font-size: calc(var(--index) * .9);
+    color: rgb(183,183,183);
+    font-family: raleway_c;
+}
+.nav__list_items{
+    height: 0px;
+    box-sizing:border-box;
+    overflow: hidden;
+    transition: height .8s ease;
+    padding: 0 10px;
+
+}
+.nav__list_item a{
+    display: block;
+    text-decoration: none;
+    color: rgb(183,183,183);
+    font-size: calc(var(--index) * 0.8);
+    width: calc(var(--index) * 4);
+    height: calc(var(--index) * 4);
+    margin: calc(var(--index) * 1) 0 20px 0;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgb(24, 24, 24);
+    box-shadow: 0 0  8px 5px rgba(65, 65, 65, 0.5);
+    line-height: calc(var(--index) * 4);
+    transition:transform .3s ease;
+}
+.nav__list_item a:hover{
+    transform: scale(105%);
+    color: #fff;
+}
+@keyframes heartbeat {
+    0% {
+      transform: scale( 1 );    
+    }
+    5% {
+      transform: scale( 1.1 ) 
+    } 
+    20% {
+        transform: scale( 1 ) 
+    }
+    35% {
+      transform: scale( 1.15 ) 
+    }
+  }
+
+.particles{
+    position: absolute;
+}
