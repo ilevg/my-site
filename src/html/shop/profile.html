@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Account</title>
+
+        <link rel="shortcut icon" href="/src/asset/img/logo.png" type="image/x-icon">
+        
+        <link rel="stylesheet" href="/src/asset/css/header.css">
+        <link rel="stylesheet" href="/src/asset/css/reset.css">
+        <link rel="stylesheet" href="/src/asset/css/shop-css/shop.css">
+    
+        <script type="module" src="/src/asset/js/app.js" defer></script>
+        <script type="module" src="/src/asset/js/shop.js" defer></script>
+        <script type="module" src="/src/asset/js/add-footer.js" defer></script>
+        <script type="module" src="/src/asset/js/add-cart.js" defer></script>
+
+    
+        <script src="/src/libs/particles/particles.js" defer></script>
+    </head>
+
+<body >
+    <canvas class="particles" data-color="#B99970"></canvas>
+    <h2 class="login__header">My Account</h2>
+    <div class="profile__address_edit">
+        <div class="profile__address_edit_cont">
+            <h3 class="profile__address_edit-header">Account information</h3>
+            <div class="profile__address_name">
+                <div class="profile__address_fname_cont">
+                    <input type="text" class="profile__address_fname" placeholder="First name">
+                    <span class="checkout_fname_error">Enter a first name
+                    </span>
+                </div>
+                <div class="profile__address_lname_cont">
+                    <input type="text" class="profile__address_lname" placeholder="Last name">
+                    <span class="checkout_lname_error">Enter a last name
+                    </span>
+                </div>
+            </div>
+
+            <div class="profile__address_addres_cont">
+                <input type="text" class="profile__address_addres" placeholder="Address">
+                <span class="checkout_addres_error">Enter an address</span>
+            </div>
+
+            <div class="profile__address_cont">
+                <div class="profile__address_postcode_cont">
+                    <input type="text" class="profile__address_postcode" placeholder="Postal code">
+                    <span class="checkout_fname_error">Enter a postal code
+                    </span>
+                </div>
+
+                <div class="profile__address_city_cont">
+                    <input type="text" class="profile__address_city" placeholder="City">
+                    <span class="checkout_city_error">Enter a city
+                    </span>
+                </div>
+            </div>
+
+            <div class="profile__address_phone_cont">
+                <input type="text" class="checkout__phone_addres" placeholder="Phone">
+                <span class="checkout_phone_error">Enter a phone</span>
+            </div>
+            <div class="profile__adress_edit-buttons">
+                <button  type="button">Edit</button>
+                <button class="profile__adress_edit-cancel" type="button">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div class="profile__order_info">
+        <div class="profile__accaunt_info">
+            <div class="profile__name">
+                <span>Yevhen</span>
+                <span>Bush</span>
+            </div>
+            <span class="profile__account_mail">e.ilnitskii@gmail.com</span>
+            <div class="profile__address">
+                <h3>Default address</h3>
+                <div class="profile__address_name">
+                    <span>Yevhen</span>
+                    <span>Bush</span>
+                </div>
+                <span>Trembowelska 13</span>
+                <div class="profile__address_name">
+                    <span>04-304</span>
+                    <span>Warsaw</span>
+                </div>
+                <span class="profile__address_phone">+4903433434</span>
+                
+                <button class="profile__button">Edit</button>
+
+
+                
+                
+            </div>
+        </div>
+        <div class="profile__order_item">
+            <h2 class="profile__order_header">Order history</h2>
+            <table class="profile__order_table">
+                <tr>
+                    <th>Number</th>
+                    <th>Paintings</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Date</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        
+                        <img class="profile__img_product" src="/src/asset/img/shop-img/picture-1.png" alt="Raccon">
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Raccon</li>
+                            <li>Oil painting</li>
+                            <li>Size: 100 x 100cm</li>
+                        </ul>
+                    </td>
+                    <td>€1500</td>
+                    <td>
+                        <span>31.08.2023</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>
+                        <img class="profile__img_product" src="/src/asset/img/shop-img/picture-2.png" alt="Monkey">
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Monkey</li>
+                            <li>Oil painting</li>
+                            <li>Size: 100 x 100cm</li>
+                        </ul>
+                    </td>
+                    <td>€1300</td>
+                    <td>
+                        <span>31.08.2023</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>

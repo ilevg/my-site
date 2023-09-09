@@ -1,0 +1,82 @@
+:root{
+    --index: calc(1vw + 1vh);
+}
+body{
+    height: 1600px;
+}
+*{
+    font-family: raleway_c;
+}
+.contact__social_logo{
+    width: 40px;
+    height: 40px;
+    background-image: url(/src/asset/img/social-logo-pic.png);
+    background-size: 270% 270%;
+    margin: 10px;
+    border-radius: 500%;
+}
+.contact__social_logo:hover{
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+}
+.contact__social_logo-instagram{
+    background-position: 48px 99.5px;
+
+}
+.contact__social_logo-teleg{
+    background-position: -7.5px 47px;
+}
+.contact__social_logo-facebook{
+    background-position: -7px -8.5px;
+}
+.contact__social_container{
+    display: flex;
+    justify-content: center;
+}
+.contact__form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.contact__form input, textarea, button{
+    width: calc(var(--index)*30);
+    background-color: transparent;
+    border: .1px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+    font-family: raleway_c;
+}
+.contact__form_button{
+    color: rgb(255, 255, 255);
+    transition: background-color .3s ease, color .3s ease;
+}
+.contact__form_button:hover{
+    background-color: #fff;
+    color: rgb(1,1,1);
+}
+.contact__form input::placeholder, textarea::placeholder, button::placeholder{
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+}
+.contact__form_header{
+    font-size: calc(var(--index) * 4);
+}
+.frame__content_header{
+    font-size: calc(var(--index) * 2);
+}
+.frame__contact_item{
+    font-size: calc(var(--index) * 1.5);
+    margin-top: calc(var(--index) * 1.5);
+}
+.frame__contact a{
+    display: block;
+    color: rgb(183,183,183);
+    margin-top: calc(var(--index) * 0.3);
+    transition: all .3s ease;
+}
+.frame__contact a:hover{
+    color: rgb(255, 255, 255)
+}
+.frame__contact{
+    text-align: center;
+}
