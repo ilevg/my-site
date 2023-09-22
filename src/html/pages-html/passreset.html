@@ -6,20 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Reset password</title>
 
-        <!-- <link rel="shortcut icon" href="/src/asset/img/logo.png" type="image/x-icon">
-        
-        <link rel="stylesheet" href="/src/asset/css/header.css">
-        <link rel="stylesheet" href="/src/asset/css/reset.css">
-        <link rel="stylesheet" href="/src/asset/css/shop-css/passreset.css">
-    
-        <script type="module" src="/src/asset/js/shop.js" defer></script>
-
-        <script type="module" src="/src/asset/js/add-header.js" defer></script>
-        <script type="module" src="/src/asset/js/add-footer.js" defer></script>
-        <script type="module" src="/src/asset/js/add-cart.js" defer></script>
-
-    
-        <script src="/src/libs/particles/particles.js" defer></script> -->
+        <link rel="shortcut icon" href="/src/asset/img/logo.png" type="image/x-icon">
     </head>
 
 <body data-page="login">
@@ -27,16 +14,16 @@
     <div id="cart-placeholder"></div>
     
     <canvas class="particles" data-color="#B99970"></canvas>
-    <h2 class="login__header">Reset password</h2>
+    <h2 class="login__title">Reset password</h2>
 
-    <div class="login__content">
+    <div class="login passreset">
         <h3>Reset your password</h3>
         <span class="passreset__subtext">We will send you an email to reset your password.</span>
         <input type="email" name="login_email" id="login_email" placeholder="Email">
 
-        <span id="passreset__email_error">No account found with that email.</span>
+        <span class="passreset__email-error">No account found with that email.</span>
 
-        <div class="passreset_button_cont">
+        <div class="passreset__buttons">
             <button type="submit" id="reset_button">Submit</button>
             <a href="./login.html">Cancel</a>
         </div>

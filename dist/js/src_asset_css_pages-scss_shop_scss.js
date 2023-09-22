@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_site=self.webpackChunkmy_site||[]).push([["src_asset_css_pages-scss_shop_scss"],{665:(s,e,c)=>{c.r(e)}}]);

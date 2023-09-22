@@ -1,65 +1,19 @@
 
 /* Style for profile.html */
 body{
-    animation: .5s ease opacity_change;
+    animation: var(--animation-body);
 }
-.profile__header{
+.profile__title{
     display: block;
     text-align: center;
     margin:0 0 0 calc(var(--index) * 7);
     padding-top: calc(var(--index) * 1);
     padding-bottom: calc(var(--index) * 1);
-    font-family: raleway_c;
-    font-size: calc(var(--index) * 3);
-    border-bottom: 1px solid rgb(255, 255, 255);
+    font-family: var(--font-family);
+    font-size: var(--font-size-large);
+    border-bottom: var(--border-all);
 }
-
-.profile__order_info{
-    display: flex;
-    justify-content: space-between;
-    font-family: raleway_c;
-    font-size: calc(var(--index) * 1);
-    z-index: 10000;
-    transition: right .5s ease;
-}
-.profile__accaunt_info{
-    display: block;
-    margin: calc(var(--index) * .5) calc(var(--index) * .5) calc(var(--index) * .5) calc(var(--index) * 7);
-}
-.profile__name{
-    display: flex;
-    gap:calc(var(--index) * .5);
-    font-weight: 600;
-}
-.profile__account_mail{
-    display: block;
-    margin-bottom: calc(var(--index) * 1.5);
-    color: rgb(183, 183, 183);
-}
-.profile__address{
-    display: flex;
-    flex-direction: column;
-    color: rgb(183, 183, 183);
-}
-.profile__address h3{
-    font-weight: 600;
-    color: rgb(255, 255, 255);
-}
-.profile__address_phone{
-    margin-bottom: calc(var(--index) * .5);
-}
-.profile__button{
-    background-color: rgba(48, 92, 123, 0.4);
-    color: rgb(255, 255, 255);
-    border-radius: 50px;
-    border: 1px solid rgb(255, 255, 255);
-    transition: background-color .3s ease, color .3s ease;
-}
-.profile__button:hover{
-    background-color: rgba(255, 255, 255);
-    color: rgb(0, 0, 0);
-}
-.profile__address_edit{
+.profile-popup{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,111 +25,167 @@ body{
     left: 0;
     background-color: rgba(31, 48, 59, .96);
     transition: height .5s ease ;
+
+    &__data{
+        font-family: var(--font-family);
+        font-size: var(--font-size-medium);
+    }
+    &__data span{
+        display: none;
+        margin-bottom: calc(var(--index) * .4);
+        margin-left: calc(var(--index) * .4);
+        font-size: var(--font-size-small);
+        color: var(--error-color);
+        font-weight: 600;
+    }
+    &__title{
+        text-align: center;
+        margin-bottom: calc(var(--index) * 1);
+        font-size: calc(var(--index) * 2);
+    }
+    & input{
+        padding: calc(var(--index) * .3);
+        font-size: var(--font-size-medium);
+        border: var(--border-all);
+        border-radius: var(--border--radius);
+        background-color: var(--transparent);
+        color: var(--primary-color);
+        margin-bottom: calc(var(--index) * .5);
+    }
+    &__name, 
+    &__wrapper{
+        display: flex;
+        gap: calc(var(--index) * .5);
+    }
+    &__fname input, 
+    &__lname input,
+    &__post input,
+    &__city input{
+        width: calc(25vw - calc(var(--index) * .25));
+    }
+
+    &__address, 
+    &__phone{
+        display: flex;
+        flex-direction: column;
+        color: var(--primary-color);
+    }
+    &__buttons{
+        display: flex;
+        gap: calc(var(--index) * .5);
+    }
+    &__button-edit,
+    &__button-cancel{
+        width: 100%;
+        padding: calc(var(--index) * .3);
+        border: var(--border-all);
+        border-radius: var(--border--radius);
+        color: var(--secondary-color);
+        transition: var(--transition-color), var(--transition-bg-color);
+        &:hover{
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+    }
+    &__button-cancel{
+        background-color: transparent;
+        color: var(--primary-color);
+        &:hover{
+            color: var(--secondary-color);
+            background-color: var(--primary-color);
+        }
+    }
+    
 }
-.profile__address_edit_cont{
-    width: fit-content;
-    height: fit-content;
-    font-family: raleway_c;
-    font-size: calc(var(--index) * 1);
-}
-.profile__address_edit_cont span{
-    display: none;
-    margin-bottom: calc(var(--index) * .4);
-    margin-left: calc(var(--index) * .4);
-}
-.profile__address_edit-header{
-    text-align: center;
-    margin-bottom: calc(var(--index) * 1);
-    font-size: calc(var(--index) * 2);
-}
-.profile__address_edit input{
-    padding: calc(var(--index) * .3);
-    font-size: calc(var(--index) * 1);
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 50px;
-    background-color: transparent;
-    color: rgb(255, 255, 255);
-    margin-bottom: calc(var(--index) * .5);
-}
-.profile__address_name, .profile__address_cont{
+
+/*profile information section*/
+
+.profile{
     display: flex;
-    gap: calc(var(--index) * .5);
+    justify-content: space-between;
+    font-family: var(--font-family);
+    font-size: var(--font-size-medium);
+
+    z-index: 10000;
+    transition: right .5s ease;
+
+    &__info{
+        display: block;
+        margin: calc(var(--index) * .5) calc(var(--index) * .5) calc(var(--index) * .5) calc(var(--index) * 7);
+    }
+    &__name{
+        display: flex;
+        gap:calc(var(--index) * .5);
+        font-weight: 600;
+    }
+    &__mail{
+        display: block;
+        margin-bottom: calc(var(--index) * 1.5);
+        color: var(--paragraph-color);
+    }
+    &__address{
+        display: flex;
+        flex-direction: column;
+        color: var(--paragraph-color);
+    }
+    &__address h3{
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+    &__phone{
+        margin-bottom: calc(var(--index) * .5);
+    }
+    &__button{
+        background-color: rgba(48, 92, 123, 0.4);
+        color: var(--primary-color);
+        border-radius:var(--border--radius);;
+        border: var(--border-all);
+        transition: var(--transition-color), var(--transition-bg-color);
+        &:hover{
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+        }
+    }
+    
 }
-.profile__address_name input, 
-.profile__address_lname_cont input,
-.profile__address_postcode_cont input,
-.profile__address_city_cont input{
-    width: calc(25vw - calc(var(--index) * .25));
-}
-.profile__address_fname_cont, 
-.profile__address_lname_cont, 
-.profile__address_addres_cont, 
-.profile__address_phone_cont,
-.profile__address_city_cont,
-.profile__address_postcode_cont{
-    display: flex;
-    flex-direction: column;
-    color: rgb(255, 255, 255);
-    font-size: calc(var(--index) * .5);
-}
-.profile__adress_edit-buttons{
-    display: flex;
-    gap: calc(var(--index) * .5);
-}
-.profile__address_edit button{
-    width: 100%;
-    padding: calc(var(--index) * .3);
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 50px;
-    color: rgb(0, 0, 0);
-    transition: background-color .3s ease, color .3s ease;
-}
-.profile__address_edit button:hover{
-    background-color: transparent;
-    color: rgb(255, 255, 255);
-}
-button.profile__adress_edit-cancel{
-    background-color: transparent;
-    color: rgb(255, 255, 255);
-}
-button.profile__adress_edit-cancel:hover{
-    color: rgb(0, 0, 0);
-    border: 1px solid rgb(0, 0, 0);
-}
-.profile__order_item{
+
+/* orders history section*/
+
+.profile-orders{
     padding: 0 calc(var(--index) * .5);
     text-align: center;
     transition: right 1s ease;
     background-color: rgba(31, 48, 59, 0.8);
-}
-.profile__order_header{
-    font-size: calc(var(--index) * 1.5);
-    padding-bottom: calc(var(--index) * .5);
-}
-.profile__order_table{
-    width: 100%;
-}
-.profile__order_table th{
-    padding-right: 5px;
-}
-.profile__order_table tr{
-    padding-right: 5px;
-    font-size: calc(var(--index) * .7);
-    border-bottom: .1px solid rgb(255, 255, 255);
-}
-.profile__order_table tr:last-child{
-    border-bottom: none;
 
+    &__title{
+        font-size: calc(var(--index) * 1.5);
+        padding-bottom: calc(var(--index) * .5);
+    }
+    &__table{
+        width: 100%;
+    }
+    &__table th{
+        padding-right: 5px;
+    }
+    &__table tr{
+        padding-right: 5px;
+        font-size: var(--font-size-small);
+        border-bottom: var(--border-all);
+        &:last-child{
+            border-bottom: none;
+        }
+    }
+    &__table td{
+        padding-right: 5px;
+    }
+    &__table ul li:first-child{
+        color: var(--primary-color);
+        font-size: var(--font-size-small);
+        font-weight: 600;
+    }
+    &__img{
+        width: calc(var(--index) * 2.5);
+        padding: 15px;
+    }
 }
-.profile__order_table td{
-    padding-right: 5px;
-}
-.profile__order_table ul li:first-child{
-    color: rgb(255, 255, 255);
-    font-size: calc(var(--index) * .7);
-    font-weight: 600;
-}
-.profile__img_product{
-    width: calc(var(--index) * 2.5);
-    padding: 15px;
-}
+

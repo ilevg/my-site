@@ -9,8 +9,8 @@ import '../css/modules-scss/footer.scss';
 const editAdressButton = document.querySelector('.profile__button');
 
 function editAdress() {
-    const editAddresPopup = document.querySelector('.profile__address_edit')
-    const cancelEditAddres = document.querySelector('.profile__adress_edit-cancel')
+    const editAddresPopup = document.querySelector('.profile-popup')
+    const cancelEditAddres = document.querySelector('.profile-popup__button-cancel')
 
     cancelEditAddres.addEventListener('click', function(){
         editAddresPopup.style.height='0'

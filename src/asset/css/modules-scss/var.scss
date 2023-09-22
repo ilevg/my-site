@@ -15,6 +15,7 @@
     --secondary-color: rgb(0, 0, 0);
     --paragraph-color: rgb(183, 183, 183);
     --shop-elem-bg: rgba(31, 48, 59, 0.8);
+    --error-color: rgb(255, 0, 0);
     --transparent: transparent;
     /*borders:*/
     --border-all: 1px solid var(--primary-color);
@@ -24,7 +25,7 @@
     --transition-bg-color: background-color .3s;
     --transition-transform: transform .3s;
     /* animation:*/
-    --animation: .5s ease opacity_change;
+    --animation-body: .5s ease opacity_change;
     /* vars for scroll pages*/
     --gutter: 30px;
     --side-small: 26;

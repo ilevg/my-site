@@ -1,0 +1,1 @@
+(()=>{"use strict";const t=document.querySelector("body");window.addEventListener("click",(function(e){let c=e.target.closest(".collection-img");if(!c)return;let o=c.closest(".collection__container-img");o&&(c.classList.toggle("collection-img-open"),o.classList.toggle("collection__container-img-change"),t.classList.toggle("collection__body-hidden"))}))})();
