@@ -1,44 +1,47 @@
 
 /* Style for payments.html */
 body{
-    animation: .5s ease opacity_change;
+    animation: var(--animation-body);
 }
-.payments__header{
+.payments__title{
     display: block;
     text-align: center;
     margin:0 0 0 calc(var(--index) * 7);
     padding-top: calc(var(--index) * 1);
     padding-bottom: calc(var(--index) * 1);
-    font-family: raleway_c;
-    font-size: calc(var(--index) * 3);
-    border-bottom: 1px solid rgb(255, 255, 255);
+    font-family: var(--font-family);
+    font-size: var(--font-size-large);
+    border-bottom: var(--border-all);
 }
-.payments__available{
+.payments{
     margin:0 calc(var(--index) * 1) 0 calc(var(--index) * 7);
-    font-family: raleway_c;
-    color: rgb(183, 183, 183);
+    font-family: var(--font-family);
+    color: var(--paragraph-color);
+
+    & h3{
+        margin: calc(var(--index) * .5) 0;
+        font-size: var(--font-size-medium);
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+    &__img{
+        display: block;
+        max-width: calc(var(--index) * 30);
+        width: 100%;
+        margin: 0 auto;
+    }
+    & p{
+        margin: calc(var(--index) * .5) 0 calc(var(--index) * .5) 0;
+        font-size: var(--font-size-small);
+        &:last-child{
+            color: rgba(49, 89, 116, 0.8);
+            font-weight: 600;
+        }
+    }
+    &__subtext{
+        padding:  calc(var(--index) * .5) calc(var(--index) * .5) calc(var(--index) * 1.5) 0;
+        border-bottom: var(--border-all);
+    }
+    
 }
-.payments__available h3{
-    margin: calc(var(--index) * .5) 0;
-    font-size: calc(var(--index) * 1);
-    font-weight: 600;
-    color: rgb(255, 255, 255);
-}
-.payments__available_img{
-    display: block;
-    max-width: calc(var(--index) * 30);
-    width: 100%;
-    margin: 0 auto;
-}
-p.payments__available_subtext{
-    padding:  calc(var(--index) * .5) calc(var(--index) * .5) calc(var(--index) * 1.5) 0;
-    border-bottom: 1px solid rgb(255, 255, 255);
-}
-.payments__available p{
-    margin: calc(var(--index) * .5) 0 calc(var(--index) * .5) 0;
-    font-size: calc(var(--index) * .7);
-}
-.payments__available p:last-child{
-    color: rgba(49, 89, 116, 0.8);
-    font-weight: 600;
-}
+

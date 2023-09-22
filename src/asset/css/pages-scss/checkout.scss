@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body{
-    animation: 2.5s ease opacity_change;
+    animation: var(--animation-body);
 }
 .checkout__title{
     display: block;
@@ -10,31 +10,31 @@ body{
     margin:0 0 0 calc(var(--index) * 7);
     padding-top: var(--index);
     padding-bottom: var(--index);
-    font-family: raleway_c;
-    font-size: calc(var(--index) * 3);
-    border-bottom: 1px solid rgb(255, 255, 255);
+    font-family: var(--font-family);
+    font-size: var(--font-size-large);
+    border-bottom: var(--border-all);
 }
 .checkout{
     display: flex;
     margin-left: calc(var(--index) * 7);
-    color: rgb(183, 183, 183);
+    color: var(--primary-color);
     min-height: 80vh;
-    font-family: raleway_c;
+    font-family: var(--font-family);
 
     &__information{
         width: 100%;
         margin: calc(var(--index) * .5);
-        font-size: calc(var(--index) * .7);
+        font-size: var(--font-size-small);
     }
     &__input{
         height: calc(var(--index) * 1.5);
         margin-bottom: calc(var(--index) * .5);
         padding: 0  calc(var(--index) * .5);
-        font-size: calc(var(--index) * .7);
-        background-color: transparent;
-        color: rgb(183, 183, 183);
-        border: 1px solid rgb(255, 255, 255);
-        border-radius: 20px;
+        font-size: var(--font-size-small);
+        background-color: var(--transparent);
+        color: var(--paragraph-color);
+        border: var(--border-all);
+        border-radius: var(--border--radius);
     }
     
     &__email-input,
@@ -54,11 +54,11 @@ body{
     }
     &__information input::placeholder{
         display: block;
-        color: rgb(255, 255, 255);
+        color: var(--primary-color);
     }
     &__country-select option{
         background-color: transparent;
-        color:rgb(0, 0, 0);
+        color:var(--secondary-color);
     }
     &__information span{
         margin-bottom: calc(var(--index) * .5);
@@ -69,14 +69,14 @@ body{
     }
     &__title-second{
         margin: 0 0 calc(var(--index) * .5) 0;
-        font-size: calc(var(--index) * 1);
+        font-size: var(--font-size-medium);
         font-weight: 600;
-        color: rgb(255, 255, 255);
+        color: var(--primary-color);
     }
     &__login-link{
         width: 100%;
         margin-bottom: 0;
-        color: rgb(255, 255, 255);
+        color: var(--primary-color);
     }
     &__offers__wrapper{
         display: flex;
@@ -88,7 +88,7 @@ body{
         margin: 0;
         padding: 0;
         font-size: calc(var(--index) * .5);
-        color: red;
+        color: var(--error-color);
     }
     &__name, 
     &__postal{
@@ -113,7 +113,7 @@ body{
     &-error{
         display: block;
         display: none;
-        color: red;
+        color: var(--error-color);
         font-size: calc(var(--index) * .5);
     }
     &__shiping-ua,
@@ -150,7 +150,7 @@ body{
     }
     &__privacy-link{
         text-decoration: none;
-        color: white;
+        color: var(--primary-color);
     }
     &__button{
         width: 50vw;
@@ -165,120 +165,115 @@ body{
         border-radius: var(--border--radius);
         text-decoration: none;
         font-weight: 600;
-        background-color: rgba(48, 92, 123, 0.4);
-        color: white;
+        background-color: var(--shop-elem-bg);
+        color: var(--primary-color);
         transition: var(--transition-color), var(--transition-bg-color);
         &:hover{
-            background-color: rgba(255, 255, 255);
-            color: rgb(0, 0, 0);
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
         }
     }
-}
-
-
-
-/*style for order details*/
-
-.checkout__order-details{
-    width: calc(var(--index) * 20);
-    margin: 0 0 0 auto;
-    border-left: 1px solid rgb(211, 211, 211);
-    background-color: rgba(48, 92, 123, 0.4);
-}
-.checkout__order_product{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: calc(var(--index) * .5);
-    padding-bottom: calc(var(--index) * .5);
-    border-bottom: 1px solid rgb(255, 255, 255);
-}
-.checkout__order_product span{
-    font-size: calc(var(--index) * .7);
-}
-.checkout__order_img{
-    width: calc(var(--index) * 2.5);
-}
-.checkout__order_description span{
-    display: block;
-    color: rgb(255, 255, 255);
-    font-size: calc(var(--index) * .5);
-}
-span.checkout__order_name{
-    font-size: calc(var(--index) * 1);
-    font-weight: 600;
-    color: rgb(255, 255, 255);
-}
-.checkout__order_price{
-    display: flex;
-    justify-content: space-between;
-    margin: calc(var(--index) * .5);
-    font-size: calc(var(--index) * .7);
-}
-.checkout__order_price-total, .checkout__order_price-number{
-    font-size: calc(var(--index) * 1);
-    font-weight: 600;
+    /*style for order details*/
+    &__details{
+        width: calc(var(--index) * 20);
+        margin: 0 0 0 auto;
+        border-left: var(--border-all);
+        background-color: var(--shop-elem-bg);
+    }
+    &__product{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: calc(var(--index) * .5);
+        padding-bottom: calc(var(--index) * .5);
+        border-bottom: var(--border-all);
+    }
+    &__product-span{
+        display: block;
+        color: var(--primary-color);
+        font-size: calc(var(--index) * .5);
+        line-height: 1.2;
+    }
+    &__product-img{
+        width: calc(var(--index) * 2.5);
+    }
+    &__product-name{
+        font-size: var(--font-size-medium);
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+    &__price{
+        display: flex;
+        justify-content: space-between;
+        margin: calc(var(--index) * .5);
+        font-size: var(--font-size-small);
+    }
+    &__price-total, &__price-value{
+        font-size: var(--font-size-medium);
+        font-weight: 600;
+    }
 }
 
 // PAY.HTML
 
-.pay__information h3{
-    margin: calc(var(--index) * .5) 0;
-    color: rgb(255, 255, 255);
-    font-weight: 600;
-}
-h3.pay__information_header{
-    margin-bottom: calc(var(--index) * 2);
-    font-size: calc(var(--index) * 1.3);
-    font-weight:600;
-    color: rgba(49, 89, 116, 0.8);
-}
-.pay__table{
-    margin-bottom: calc(var(--index) * 2);
-}
-.pay__table th{
-    padding: 0 calc(var(--index) * .5) calc(var(--index) * .5) calc(var(--index) * .5);
-    text-align: left;
-    font-size: calc(var(--index) * .7);
-    border-right: 1px dashed rgb(255, 255, 255);
-    color: rgb(255, 255, 255);
-}
-.pay__table th:last-child{
-    border: none;
-}
-.pay__table td{
-    padding: 0 calc(var(--index) * .5) calc(var(--index) * .5) calc(var(--index) * .5);
-    text-align: left;
-    font-size: calc(var(--index) * .7);
-    border-right: 1px dashed rgb(255, 255, 255);
-}
-.pay__table td:last-child{
-    border: none;
-}
-
-.pay__table_inforvation th{
-    text-align: left;
-    padding: calc(var(--index) * .5);
-    font-size: calc(var(--index) * .7);
-    color: rgb(255, 255, 255);
-    border-bottom: 1px dashed rgb(255, 255, 255);
-}
-
-.pay__table_inforvation td{
-    text-align: left;
-    padding: calc(var(--index) * .5);
-    font-size: calc(var(--index) * .7);
-    color: rgb(255, 255, 255);
-    border-bottom: 1px dashed rgb(255, 255, 255);
-    color: rgb(183, 183, 183);
-}
-.pay__table_inforvation tr:last-child th,.pay__table_inforvation tr:last-child td{
-    border: none;
-}
-.pay__information_subtext{
-    display: block;
-    margin: calc(var(--index) * 1.5) calc(var(--index) * .5);
-    color: rgba(49, 89, 116, 0.8);
-    font-weight: 600;
-    font-size: calc(var(--index) * 1);
+.pay{
+    &__subtitle{
+        margin: calc(var(--index) * .5) 0 calc(var(--index) * 1.5);
+        font-size: var(--font-size-medium);
+        font-weight:600;
+        color: rgba(49, 89, 116, 0.8);
+    }
+    &__title-second{
+        margin: calc(var(--index) * .5) 0;
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+    &__table-order{
+        margin-bottom: calc(var(--index) * 2);
+    }
+    &__table-order th{
+        padding: 0 calc(var(--index) * .5) calc(var(--index) * .5) calc(var(--index) * .5);
+        text-align: left;
+        font-size: var(--font-size-small);
+        border-right: 1px dashed var(--primary-color);
+        color: var(--primary-color);
+        &:last-child{
+            border: none;
+        }
+    }
+    &__table-order td{
+        padding: 0 calc(var(--index) * .5) calc(var(--index) * .5) calc(var(--index) * .5);
+        text-align: left;
+        font-size: var(--font-size-small);
+        border-right: 1px dashed var(--primary-color);
+        &:last-child{
+            border: none;
+        }
+    }
+    &__table-bank th{
+        text-align: left;
+        padding: calc(var(--index) * .5);
+        font-size: var(--font-size-small);
+        color: var(--primary-color);
+        border-bottom: 1px dashed var(--primary-color);
+    }
+    
+    &__table-bank td{
+        text-align: left;
+        padding: calc(var(--index) * .5);
+        font-size: var(--font-size-small);
+        color: var(--primary-color);
+        border-bottom: 1px dashed var(--primary-color);
+        color: var(--paragraph-color);
+    }
+    &__table-bank tr:last-child th, &__table-bank tr:last-child td{
+        border: none;
+    }
+    &__subtext{
+        display: block;
+        margin: calc(var(--index) * 1.5) calc(var(--index) * .5);
+        color: rgba(49, 89, 116, 0.8);
+        font-weight: 600;
+        font-size: var(--font-size-medium);
+    }
 }

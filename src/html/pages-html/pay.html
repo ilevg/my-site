@@ -6,21 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order received</title>
 
-    <!-- <link rel="shortcut icon" href="/src/asset/img/logo.png" type="image/x-icon">
-
-    <link rel="stylesheet" href="/src/asset/css/header.css">
-    <link rel="stylesheet" href="/src/asset/css/reset.css">
-    <link rel="stylesheet" href="/src/asset/css/shop-css/pay.css">
-    <link rel="stylesheet" href="/src/asset/css/shop-css/chekout.css">
-
-    <script type="module" src="/src/asset/js/shop.js" defer></script>
-
-    <script type="module" src="/src/asset/js/add-header.js" defer></script>
-    <script type="module" src="/src/asset/js/add-footer.js" defer></script>
-    <script type="module" src="/src/asset/js/add-cart.js" defer></script>
-
-
-    <script src="/src/libs/particles/particles.js" defer></script> -->
+    <link rel="shortcut icon" href="/src/asset/img/logo.png" type="image/x-icon">
 </head>
 
 <body data-page="checkout">
@@ -28,13 +14,13 @@
     <div id="cart-placeholder"></div>
 
     <canvas class="particles" data-color="#B99970"></canvas>
-    <h2 class="checkout__header">Order received</h2>
-    <section class="checkout__section">
-        <div class="pay__information">
-            <h3 class="pay__information_header">Thank you. We received your order.</h3>
+    <h2 class="checkout__title">Order received</h2>
+    <section class="checkout">
+        <div class="pay">
+            <h3 class="pay__subtitle">Thank you. We received your order.</h3>
 
-            <h3>Order details:</h3>
-            <table class="pay__table">
+            <h3 class="pay__title-second">Order details:</h3>
+            <table class="pay__table-order">
                 <tr>
                     <th>Number of order:</th>
                     <th>Date:</th>
@@ -50,8 +36,8 @@
             </table>
 
 
-            <h3>Our bank details:</h3>
-            <table class="pay__table_inforvation">
+            <h3 class="pay__title-second">Our bank details:</h3>
+            <table class="pay__table-bank">
                 <tr>
                     <th>Bank:</th>
                     <td>Millenium</td>
@@ -66,42 +52,42 @@
                 </tr>
             </table>
 
-            <span class="pay__information_subtext">The order will be sent after the funds have been credited to our account. Enter the order number in the payment description.</span>
+            <span class="pay__subtext">The order will be sent after the funds have been credited to our account. Enter the order number in the payment description.</span>
         </div>
 
 
-        <div class="checkout__order-details">
+        <div class="checkout__details">
             <div>
-                <div class="checkout__order_product">
-                    <img class="checkout__order_img" src="/src/asset/img/shop-img/picture-1.png" alt="Raccon">
-                    <div class="checkout__order_description">
-                        <span class="checkout__order_name">Raccon</span>
-                        <span>Oil painting</span>
-                        <span>Size: 100 x 100cm</span>
+                <div class="checkout__product">
+                    <img class="checkout__product-img" src="/src/asset/img/shop-img/picture-1.png" alt="Raccon">
+                    <div class="checkout__product-description">
+                        <span class="checkout__product-name">Raccon</span>
+                        <span class="checkout__product-span">Oil painting</span>
+                        <span class="checkout__product-span">Size: 100 x 100cm</span>
                     </div>
                     <span>€1500</span>
                 </div>
 
-                <div class="checkout__order_product">
-                    <img class="checkout__order_img" src="/src/asset/img/shop-img/picture-2.png" alt="Raccon">
-                    <div class="checkout__order_description">
-                        <span class="checkout__order_name">Monkey</span>
-                        <span>Oil painting</span>
-                        <span>Size: 100 x 100cm</span>
+                <div class="checkout__product">
+                    <img class="checkout__product-img" src="/src/asset/img/shop-img/picture-2.png" alt="Raccon">
+                    <div class="checkout__product-description">
+                        <span class="checkout__product-name">Monkey</span>
+                        <span class="checkout__product-span">Oil painting</span>
+                        <span class="checkout__product-span">Size: 100 x 100cm</span>
                     </div>
                     <span>€1500</span>
                 </div>
-                <div class="checkout__order_price">
+                <div class="checkout__price">
                     <span>Subtotal</span>
                     <span>€1500</span>
                 </div>
-                <div class="checkout__order_price">
+                <div class="checkout__price">
                     <span>Shiping</span>
                     <span>€40.99</span>
                 </div>
-                <div class="checkout__order_price">
-                    <span class="checkout__order_price-total">Total</span>
-                    <span class="checkout__order_price-number">€3040.99</span>
+                <div class="checkout__price">
+                    <span class="checkout__price-total">Total</span>
+                    <span class="checkout__price-value">€3040.99</span>
                 </div>
             </div>
         </div>
