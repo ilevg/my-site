@@ -1,0 +1,40 @@
+:root{
+    /*size index:*/
+    --index: calc(1vw + 1vh);
+    
+    /*font size:*/
+    --font-size-small: calc(var(--index) * .7);
+    --font-size-medium: var(--index);
+    --font-size-large: calc(var(--index) * 3);
+    
+    /*font:*/
+    --font-family: raleway_c, sans-serif;
+
+    /*Colors:*/
+    --primary-color: rgb(255, 255, 255);
+    --secondary-color: rgb(0, 0, 0);
+    --paragraph-color: rgb(183, 183, 183);
+    --shop-elem-bg: rgba(31, 48, 59, 0.8);
+    --transparent: transparent;
+    /*borders:*/
+    --border-all: 1px solid var(--primary-color);
+    --border--radius: 50px;
+    /*transition:*/
+    --transition-color: color .3s ;
+    --transition-bg-color: background-color .3s;
+    --transition-transform: transform .3s;
+    /* animation:*/
+    --animation: .5s ease opacity_change;
+    /* vars for scroll pages*/
+    --gutter: 30px;
+    --side-small: 26;
+    --side-big: 36;
+    --transition: .75s cubic-bezier(.075, .5, 0, 1);
+}
+
+
+
+
+
+
+

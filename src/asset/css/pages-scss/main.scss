@@ -1,0 +1,107 @@
+@import url(../modules-scss/header.scss);
+:root{
+    --transition: 1.5s cubic-bezier(.050, .500, 0, 1);
+}
+body{
+    font-family: var(--font-family);
+    overflow: hidden;
+    animation: .5s ease opacity_change;
+}
+.layers{
+    perspective: 1100px;
+    &__items{
+        height: 100vh;
+        transform-style: preserve-3d;
+        transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+        will-change: transform;
+        transition: transform var(--transition);
+    }
+    &__item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        inset: -6vw;
+        background-size: cover;
+        background-position: center;
+        font-family: var(--font-family);
+    }
+    
+    .layer-2-1{
+        transform: translateZ(100px) scale(0.9);
+    }
+    .layer-2-2{
+        transform: translateZ(110px) scale(0.9);
+    }.layer-2-3{
+        transform: translateZ(80px) scale(0.9);
+    }.layer-2-4{
+        transform: translateZ(20px) scale(0.9);
+    }
+    .layer-2-5{
+        transform: translateZ(180px);
+    }
+    .layer-2-6{
+        transform: translateZ(40px) scale(0.9);
+    }
+    .layer-2-7{
+        transform: translateZ(100px) scale(0.9);
+    }
+    .layer-2-8{
+        transform: translateZ(90px) scale(0.9);
+    }
+    .layer-2-9{
+        transform: translateZ(70px) scale(0.9);
+    }
+    .layer-6{
+        transform: translateZ(550px) scale(.6);
+    }
+    &__text{
+        position: absolute;
+    }
+    &__text-1{
+        margin-bottom: calc(var(--index) * 10);
+        margin-right: calc(var(--index) * 4.5);
+        font-size: calc(var(--index) * 2.5);   
+    }
+    &__text-2{
+        margin-top: calc(var(--index) * 7.5);
+        margin-left: calc(var(--index) * 4.5);
+        font-size: calc(var(--index) * 2.5); 
+    }
+    &__text-3{
+        transform: rotate(90deg);
+        margin-bottom: calc(var(--index) * 13);
+        margin-left: calc(var(--index) * 4);
+        font-size: calc(var(--index) * 1.7);
+    }
+    &__text-4{
+        margin-bottom: calc(var(--index) * 15);
+        margin-right: calc(var(--index) * 3);
+        font-size: calc(var(--index) * .8); 
+    }
+    &__text-5{
+        font-size: calc(var(--index) * 3.1);
+    }
+    &__text-6{
+        margin-top: calc(var(--index) * 12);
+        margin-left: calc(var(--index) * 2);
+        font-size: calc(var(--index) * 1.35);    
+    }
+    &__text-7{
+        transform: rotate(90deg);
+        margin-top: calc(var(--index) * 12);
+        margin-right: calc(var(--index) * 6);
+        font-size: calc(var(--index) * 1.5);
+    }
+    &__text-8{
+        margin-top: calc(var(--index) * 16);
+        margin-right: calc(var(--index) * 10);
+        font-size: calc(var(--index) * 1); 
+    }
+    &__text-9{
+        margin-bottom: calc(var(--index) * 17);
+        margin-left: calc(var(--index) * 10);
+        font-size: calc(var(--index) * .7); 
+    }
+}
+

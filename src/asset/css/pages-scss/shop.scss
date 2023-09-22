@@ -1,0 +1,29 @@
+
+body{
+    animation: .5s ease opacity_change;
+}
+.frame{
+    &__shop-price{
+        font-size: calc(var(--index) * 2);
+        font-weight: 300;
+        color: var(--primary-color);
+    }
+    &__shop-button-left{
+        display: block;
+        margin-left: auto;
+    }
+}
+.frame__shop-button{
+    width: calc(var(--index) * 10);
+    margin-top: calc(var(--index) * .5);
+    padding: 8px;
+    border: var(--border-all);
+    border-radius: var(--border--radius);
+    background-color: transparent;
+    color: var(--primary-color);
+    transition: var(--transition-bg-color), var(--transition-color);
+    &:hover{
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+    }
+}

@@ -1,0 +1,68 @@
+@import "./shop.scss";
+body{
+    font-family: var(--font-family);
+    animation: var(--animation);
+}
+.collection{
+    text-align: center;
+    margin-left: calc(var(--index) * 7);
+    &__title{
+        padding-top: calc(var(--index) * .6);
+        font-size: var(--font-size-large);
+    }
+    &__subtext{
+        margin-bottom: calc(var(--index) * 2);
+        text-align: center;
+        font-size: var(--font-size-medium);
+    }
+    &__items{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item{
+        margin: calc(var(--index) * .5);
+        max-width: calc(25% - calc(var(--index) * 1.5));
+    
+    }
+    &__item h3{
+        font-size: calc(var(--index) * 1.5);
+    }
+    &__item ul{
+        width: calc(var(--index) * 10);
+        margin: 0 auto;
+        font-size: var(--font-size-small);
+        color: var(--paragraph-color);
+    }
+    &-img{
+        width: 100%;
+        cursor: pointer;
+        transition: all .3s ease;
+        &:hover{
+            transform: scale(105%);
+        }
+    }
+    &__container-img-change{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--shop-elem-bg);
+        overflow: hidden;
+        transition: all .5s ease;
+    }
+    &-img-open{
+        height: calc(100vh - calc(var(--index) * 2.4));
+        width: auto;
+        margin: calc(var(--index) * 1.2);
+        transition: all .5s ease;
+    }
+    &__body-hidden{
+        overflow: hidden;
+    }
+    &__pagination{
+        margin: 0 auto calc(var(--index) * 1) auto ;
+        font-family: var(--font-family);
+    }
+}
+

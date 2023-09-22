@@ -1,3 +1,30 @@
+
+import '../../asset/img/about-1.jpg';
+import '../../asset/img/about-2.jpg';
+
+
+
+import '../css/pages-scss/scroll.scss';
+import '../css/pages-scss/contact.scss';
+import '../css/modules-scss/reset.css';
+
+import '../../libs/particles/particles.js'
+import {loadSection} from './add-sections.js';
+import {headerFunction} from './add-header.js';
+
+//import individual style for page
+import {importPageStyles} from './import-page-styles.js';
+importPageStyles();
+
+// add header
+
+const headerUrl = './header.html', 
+      headerPlaceholder = document.querySelector('#header-placeholder'), 
+      headerError = 'Header loading error:'
+loadSection(headerUrl, headerPlaceholder, headerError, headerFunction)
+
+
+
 // 3d scroll
 
 let zSpacing = -1000,

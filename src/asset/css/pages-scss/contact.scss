@@ -1,0 +1,82 @@
+
+body{
+    height: 1600px;
+    animation: .5s ease opacity_change;
+}
+.frame{
+    &__title{
+        font-size: var(--font-size-large);
+    }
+    &__contact{
+        text-align: center;
+    }
+    &__contact__item{
+        font-size: calc(var(--index) * 1.5);
+        margin-top: calc(var(--index) * 1.5);
+    }
+    &__contact a{
+        display: block;
+        color: var(--paragraph-color);
+        margin-top: calc(var(--index) * 0.3);
+        transition: all .3s ease;
+        &:hover{
+            color: var(--primary-color);
+        }
+    }
+    &__contact__social-logo{
+        width: 40px;
+        height: 40px;
+        background-image: url(/src/asset/img/social-logo-pic.png);
+        background-size: 270% 270%;
+        margin: 10px;
+        border-radius: 500%;
+        &:hover{
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+    }
+    &__contact-instagram{
+        background-position: 48px 99.5px;
+    }
+    &__contact-teleg{
+        background-position: -7.5px 47px;
+    }
+    &__contact-facebook{
+        background-position: -7px -8.5px;
+    }
+    &__contact__social{
+        display: flex;
+        justify-content: center;
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--index) * .5);
+    }
+    &__form input, textarea{
+        width: calc(var(--index)*30);
+        background-color: transparent;
+        border: var(--border-all);
+        border-radius: 20px;
+        color: var(--primary-color);
+        font-family: var(--font-family);
+        &::placeholder{
+            color: var(--primary-color);
+            padding-left: 10px;
+        }
+    }
+    &__form-button-contact{
+        background-color: transparent;
+        border: var(--border-all);
+        border-radius: 20px;
+        color: var(--primary-color);
+        font-family: var(--font-family);
+        transition: var(--transition-bg-color), var(--transition-color);
+        &:hover{
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+        }
+    }
+}
+
+

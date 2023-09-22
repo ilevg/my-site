@@ -1,0 +1,35 @@
+<div class="checkout__order-details">
+    <div>
+        <div class="checkout__order_product">
+            <img class="checkout__order_img" src="/src/asset/img/shop-img/picture-1.png" alt="Raccon">
+            <div class="checkout__order_description">
+                <span class="checkout__order_name">Raccon</span>
+                <span>Oil painting</span>
+                <span>Size: 100 x 100cm</span>
+            </div>
+            <span>€1500</span>
+        </div>
+
+        <div class="checkout__order_product">
+            <img class="checkout__order_img" src="/src/asset/img/shop-img/picture-2.png" alt="Raccon">
+            <div class="checkout__order_description">
+                <span class="checkout__order_name">Monkey</span>
+                <span>Oil painting</span>
+                <span>Size: 100 x 100cm</span>
+            </div>
+            <span>€1500</span>
+        </div>
+        <div class="checkout__order_price">
+            <span>Subtotal</span>
+            <span>€1500</span>
+        </div>
+        <div class="checkout__order_price">
+            <span>Shiping</span>
+            <span>€40.99</span>
+        </div>
+        <div class="checkout__order_price">
+            <span class="checkout__order_price-total">Total</span>
+            <span class="checkout__order_price-number">€3040.99</span>
+        </div>
+    </div>
+</div>

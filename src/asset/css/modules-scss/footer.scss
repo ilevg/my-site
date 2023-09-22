@@ -1,0 +1,34 @@
+/* Style for footer */
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    margin:0 0 0 calc(var(--index) * 7);
+    align-items: center;
+    border-top: var(--border-all);
+    font-family: var(--font-family);
+    
+    &__copi{
+        font-size: calc(var(--index) * .6);
+        width: fit-content;
+        margin: 10px 0;
+    }
+    &__rights{
+        display: block;
+    }
+    &__links{
+        display: flex;
+        gap: 20px;
+        margin-right: 20px;
+    }
+    &__link{
+        font-size: var(--font-size-medium);
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: var(--transition-color);
+        &:hover{
+            color: var(--paragraph-color);
+        }
+    }
+
+}

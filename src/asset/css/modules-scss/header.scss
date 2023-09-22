@@ -1,0 +1,72 @@
+@import "./var.scss";
+@import "./fonts.scss";
+@import "./animations.scss";
+@import "./scrollbar.scss";
+
+body{
+    background-color: black;
+    color: white;
+    font-family: var(--fontfamily);
+}
+.header{
+    position: fixed;
+    top: calc(var(--index) * .7);
+    left: calc(var(--index) * .7);
+    font-size: calc(var(--index) * 1);
+    font-family: raleway_c;
+    color: rgb(183,183,183);
+    z-index: 100;
+}
+.nav__icon{
+    position: relative;
+    background-color: transparent;
+    padding: 0 0 0 calc(var(--index) * .7) ;
+}
+
+.nav__icon-img{
+    width: calc(var(--index) * 4);
+    background-color: transparent;
+}
+.nav__items{
+    height: 0px;
+    box-sizing:border-box;
+    overflow: hidden;
+    transition: height .8s ease;
+    padding: 0 calc(var(--index) * 0.7);
+
+}
+.nav__item a{
+    display: block;
+    text-decoration: none;
+    color: rgb(183,183,183);
+    font-size: calc(var(--index) * .7);
+    width: calc(var(--index) * 4);
+    height: calc(var(--index) * 4);
+    margin: calc(var(--index) * 1) 0 var(--index) 0;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgb(24, 24, 24);
+    box-shadow: 0 0  8px 5px rgba(65, 65, 65, 0.5);
+    line-height: calc(var(--index) * 4);
+    transition: transform .3s ease;
+    &:hover{
+        transform: scale(105%);
+        color: #fff;
+    }
+}
+
+.particles{
+    pointer-events: none;
+    position: fixed;
+}
+.peges__background{
+    background-image: url(../../img/layer-6.png); 
+    opacity: .5;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1000;
+    pointer-events: none;
+}
