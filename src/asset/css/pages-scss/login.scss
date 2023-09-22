@@ -1,0 +1,112 @@
+
+/* Style for login.html */
+body{
+    animation: .5s ease opacity_change;
+}
+.login__header{
+    display: block;
+    text-align: center;
+    margin:0 0 0 calc(var(--index) * 7);
+    padding-top: calc(var(--index) * 1);
+    padding-bottom: calc(var(--index) * 1);
+    font-family: raleway_c;
+    font-size: calc(var(--index) * 3);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+.login__content h3{
+    font-size: calc(var(--index) * 1.2);
+    color: rgb(255, 255, 255);
+}
+.login__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:calc(var(--index) * 3) calc(var(--index) * .5)  calc(var(--index) * 3) calc(var(--index) * 7);
+    font-family: raleway_c;
+    color: rgb(183, 183, 183);
+}
+.login__content input, .login__content button{
+    text-align: center;
+    width: calc(var(--index) * 20);
+    margin: calc(var(--index) * .5);
+    padding: calc(var(--index) * .3);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 50px;
+    font-size: calc(var(--index) * 1);
+    background-color: transparent;
+    color:white;
+}
+.login__content input::placeholder{
+    color:white;
+}
+.login__content button{
+    font-size: calc(var(--index) * 1);
+    background-color: rgba(48, 92, 123, 0.4);
+    transition: color .3s ease, background-color .3s ease;
+
+}
+.login__content button:hover{
+    background-color: rgba(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+.login__content span{
+    font-size: calc(var(--index) * .7);
+    line-height: 1.5;
+    color: rgb(255, 255, 255);
+}
+.login__content a{
+    font-size: calc(var(--index) * .7);
+    color: rgb(183, 183, 183);
+    transition: color .3s ease;
+}
+.login__content a:hover{
+    color: rgb(255, 255, 255);
+}
+// style for passreset.html
+/* Style for passreset.html */
+body{
+    animation: .5s ease opacity_change;
+}
+.passreset_button_cont{
+    display: flex;
+    gap: calc(var(--index) * .5);
+    width: calc(var(--index) * 20);
+    margin: 0;
+    padding: 0;
+}
+.passreset__subtext{
+    font-size: calc(var(--index) * .7);
+    color: rgb(183, 183, 183);
+
+}
+#passreset__email_error{
+    display: none;
+    margin-bottom: calc(var(--index) * .5);
+    font-size: calc(var(--index) * .7);
+    color: red;
+}
+.passreset_button_cont button{
+    width: calc(var(--index) * 10);
+    margin: 0;
+    padding: 0;
+}
+.passreset_button_cont a{
+    text-align: center;
+    width: calc(var(--index) * 10);
+    padding: calc(var(--index) * .3);
+    
+    font-size: calc(var(--index) * 1);
+    font-weight: 300;
+    text-decoration: none;
+
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 50px;
+    background-color: transparent;
+    color:white;
+    transition: background-color .3s ease, color .3s ease;
+}
+.passreset_button_cont a:hover{
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+}
