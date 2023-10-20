@@ -30,6 +30,9 @@ module.exports = {
         collection: [path.resolve(__dirname, 'src/asset/js', 'collection.js')],
         checkout: [path.resolve(__dirname, 'src/asset/js', 'checkout.js')],
         '404': [path.resolve(__dirname, 'src/asset/js', '404.js')],
+
+        products: [path.resolve(__dirname, 'src/asset/js', 'add_products.js')],
+        collection_prods: [path.resolve(__dirname, 'src/asset/js', 'collection-prods.js')],
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -65,7 +68,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'shop.html'),
             filename: 'shop.html',
-            chunks: ['shop', 'scroll'],
+            chunks: ['shop', 'scroll', 'products'],
         }),
 
 
@@ -77,7 +80,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'collection.html'),
             filename: 'collection.html',
-            chunks: ['shop_cart', 'collection']
+            chunks: ['shop_cart', 'collection', 'collection_prods']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/modules-html', 'footer.html'),
@@ -97,7 +100,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'login.html'),
             filename: 'login.html',
-            chunks: ['shop_cart']
+            chunks: ['shop_cart', 'login']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'passreset.html'),
@@ -122,7 +125,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'register.html'),
             filename: 'register.html',
-            chunks: ['shop_cart']
+            chunks: ['shop_cart', 'registration']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'return.html'),

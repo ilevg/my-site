@@ -60,7 +60,7 @@ body{
     &__fname input, 
     &__lname input,
     &__post input,
-    &__city input{
+    &__city__wrapper input{
         width: calc(25vw - calc(var(--index) * .25));
     }
 

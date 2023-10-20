@@ -22,7 +22,12 @@ body{
     &__item{
         margin: calc(var(--index) * .5);
         max-width: calc(25% - calc(var(--index) * 1.5));
-    
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+    &__item.active {
+        opacity: 1;
+        transition: opacity 1s ease;
     }
     &__item h3{
         font-size: calc(var(--index) * 1.5);
@@ -42,6 +47,9 @@ body{
     }
     &__container-img-change{
         position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         left: 0;
         top: 0;
         width: 100vw;
@@ -60,8 +68,90 @@ body{
         overflow: hidden;
     }
     &__pagination{
+        display: flex; 
+        justify-content: center;
+        align-items: center;
         margin: 0 auto calc(var(--index) * 1) auto ;
         font-family: var(--font-family);
     }
+    
+    &__pagination-page{
+        margin: 0 calc(var(--index)*1.5);
+    }
+    &__pagination-prev,
+    &__pagination-next{
+        background-color: var(--transparent);
+        border: none;
+    }
+    &__arrow{
+        display: block;
+        width: calc(var(--index)*1);
+        height: calc(var(--index)*.1);
+        background-color: var(--primary-color);
+        border-radius: calc(var(--index)*.5);
+    }
+    .arrow-prev-top{
+        transform-origin:left;
+        transform: rotate(-35deg);
+        transition: all .2s ease;
+        margin-bottom: calc(var(--index)*-.1);
+    }
+    .arrow-prev-down{
+        transform-origin:left;
+        transform: rotate(35deg);
+        transition: all .2s ease;
+        margin-top: calc(var(--index)*-.1);
+    }
+    .arrow-next-top{
+        transform-origin: right;
+        transform: rotate(35deg);
+        transition: all .2s ease;
+        margin-bottom: calc(var(--index)*-.1);
+    }
+    .arrow-next-down{
+        transform-origin: right;
+        transform: rotate(-35deg);
+        transition: all .2s ease;
+        margin-top: calc(var(--index)*-.1);
+    }
+    &__pagination-prev{
+        &:hover{
+            .arrow-prev-top{
+                transform: rotate(-25deg);
+            }
+            .arrow-prev-down{
+                transform: rotate(25deg);
+            }
+        }
+        &:active{
+            .arrow-prev-top{
+                transform: rotate(-15deg);
+            }
+            .arrow-prev-down{
+                transform: rotate(15deg);
+            }
+        }
+    }
+    &__pagination-next{
+        &:hover{
+            .arrow-next-top{
+                transform: rotate(25deg);
+            }
+            .arrow-next-down{
+                transform: rotate(-25deg);
+            }
+        }
+        &:active{
+            .arrow-next-top{
+                transform: rotate(15deg);
+            }
+            .arrow-next-down{
+                transform: rotate(-15deg);
+            }
+        }
+    }
+    &__pagination-prev,
+    &__pagination-next{
+        padding: 20px;
+    }
 }
-
