@@ -65,7 +65,7 @@ body{
             padding-left: 10px;
         }
     }
-    &__form-button-contact{
+    &__button{
         background-color: transparent;
         border: var(--border-all);
         border-radius: 20px;
@@ -76,6 +76,14 @@ body{
             background-color: var(--primary-color);
             color: var(--secondary-color);
         }
+    }
+    &__form-error{
+        display: none;
+        text-align: left;
+        margin-left: calc(var(--index) * .5);
+        font-size: var(--font-size-small);
+        font-weight: 600;
+        color: var(--error-color);
     }
 }
 

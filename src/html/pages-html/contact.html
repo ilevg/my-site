@@ -36,11 +36,14 @@
 
             <div class="frame frame_bg" >
                 <div class="frame__content">
-                    <form class="frame__form" action="#" method="post" >
-                        <input type="text" name="username" placeholder="Enter your Name">
-                        <input type="email" name="email" placeholder="Enter a valid email">
-                        <textarea name="textarea" id="" cols="30" rows="10" placeholder="Enter your massage"></textarea>
-                        <button type="button" class="frame__form-button-contact">Subbmit</button>
+                    <form class="frame__form" action="./server/index.php" method="post" >
+                        <input type="text" name="name" placeholder="Name" required autocomplete="on">
+                        <span class="frame__error-name frame__form-error">Enter your Name</span>
+                        <input type="email" name="email" placeholder="Email" required autocomplete="on">
+                        <span class="frame__error-name frame__form-error">Enter a valid email</span>
+                        <textarea name="message" id="" cols="30" rows="10" placeholder="Massage" required></textarea>
+                        <span class="frame__error-name frame__form-error">Enter your massage</span>
+                        <button type="submit" class="frame__button">Subbmit</button>
                     </form>
                 </div>
             </div>

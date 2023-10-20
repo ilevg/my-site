@@ -11,3 +11,9 @@ const cartUrl = './cart.html',
 if(cartPlaceholder){
     loadSection(cartUrl, cartPlaceholder, cartError, cartVisible)
 }
+
+
+
+
+
+

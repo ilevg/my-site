@@ -35,6 +35,9 @@ body{
         color: var(--paragraph-color);
         border: var(--border-all);
         border-radius: var(--border--radius);
+        &::placeholder{
+            color: (var(--paragraph-color));
+        }
     }
     
     &__email-input,
@@ -133,8 +136,9 @@ body{
     &__payment-description{
         height: 0;
         opacity: 0;
-        overflow: hidden;
-        padding-bottom: calc(var(--index) * .5);
+        overflow: visible;
+        box-sizing: content-box;
+        padding-bottom: calc(var(--index) * .3);
         padding-left: calc(var(--index) * .5);
         font-size: calc(var(--index) * .6);
         border: none;
@@ -150,6 +154,8 @@ body{
     }
     &__privacy-link{
         text-decoration: none;
+        font-weight: 600;
+        text-decoration: underline;
         color: var(--primary-color);
     }
     &__button{

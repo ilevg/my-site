@@ -2,9 +2,6 @@
 import '../css/modules-scss/reset.css';
 import '../css/pages-scss/404.scss';
 import '../css/modules-scss/header.scss';
-
-
-
 import '../../libs/particles/particles.js'
 
 import {loadSection} from './add-sections.js';
