@@ -33,6 +33,9 @@ module.exports = {
 
         products: [path.resolve(__dirname, 'src/asset/js', 'add_products.js')],
         collection_prods: [path.resolve(__dirname, 'src/asset/js', 'collection-prods.js')],
+        cart_products: [path.resolve(__dirname, 'src/asset/js', 'cart-products.js')],
+
+
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -68,7 +71,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'shop.html'),
             filename: 'shop.html',
-            chunks: ['shop', 'scroll', 'products'],
+            chunks: ['shop', 'scroll', 'products', 'cart_products'],
         }),
 
 

@@ -36,16 +36,16 @@ function displayProducts() {
     for (let i = 0; i < currentProductsOnPage.length; i++) {
         const product = currentProductsOnPage[i];
         const productsHtml = `
-            <div class="collection__item">
+            <div class="collection__item products">
                 <div class="collection__container-img">
-                    <img class="collection-img" src="${product.image_url}" alt="${product.product_name}">
+                    <img class="collection-img products-img" src="${product.image_url}" alt="${product.product_name}">
                 </div>
-                <h3>${product.product_name}</h3>
-                <ul>
-                    <li class="frame__shop-price">${product.price}</li>
-                    <li>${product.description}</li>
-                    <li>Size: ${product.size}cm</li>
-                </ul>
+                <h3 class="products-name">${product.product_name}</h3>
+                    <ul>
+                        <li class="frame__shop-price products-price">${product.price}</li>
+                        <li class="products-description">${product.description}</li>
+                        <li class="products-size">Size: ${product.size}cm</li>
+                    </ul>
                 <button class="frame__shop-button" type="button">Add to cart</button>
             </div>
         `;

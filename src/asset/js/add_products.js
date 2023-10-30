@@ -1,4 +1,5 @@
 import {setupEventHandlers} from './3d-scroll.js';
+import {productsToCart} from './cart-products.js';
 
 function getProducts() {
     fetch('/server/get_products.php')
@@ -6,11 +7,13 @@ function getProducts() {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            console.log(response);
             return response.json();
         })
-        .then(products => displayProducts(products))
-        .then(() => setupEventHandlers())
+        .then(products => {
+            displayProducts(products);
+            setupEventHandlers()
+        })
+        .then(() => productsToCart())
         .catch(error => console.error('Error fetching products: ', error));
 }
 //add products to shop.html
@@ -22,19 +25,19 @@ function displayProducts(products) {
         const productsHtml = `
             <div class="frame">
                 <div class="frame__content">
-                    <div class="frame__media frame__media_${i % 2 === 0 ? 'right' : 'left'}" style="background-image:url(${product.image_url})"></div>
+                    <div data-image="${product.product_name}"class=" products-img frame__media frame__media_${i % 2 === 0 ? 'right' : 'left'}" style="background-image:url(${product.image_url})">
+                    </div>
                 </div>
-                </div>
-                <div class="frame frame_bg">
-                <div class="frame__content text-${i % 2 === 0 ? 'left' : 'right'}">
-                    <h3>${product.product_name}</h3>
+            </div>
+            <div class="frame frame_bg ">
+                <div class="products frame__content text-${i % 2 === 0 ? 'left' : 'right'}">
+                    <h3 class="products-name">${product.product_name}</h3>
                     <ul>
-                        <li class="frame__shop-price">${product.price}</li>
-                        <li>${product.description}</li>
-                        <li>Size: ${product.size}cm</li>
+                        <li class="frame__shop-price products-price">${product.price}</li>
+                        <li class="products-description">${product.description}</li>
+                        <li class="products-size">Size: ${product.size}cm</li>
                     </ul>
                     <button class="frame__shop-button" ${i % 2 === 0 ? 'frame__shop-button-left' : ''} type="button">Add to cart</button>
-                </div>
                 </div>
             </div>
         `
@@ -43,5 +46,3 @@ function displayProducts(products) {
 }
 
 document.addEventListener('DOMContentLoaded', getProducts)
-
-aw
