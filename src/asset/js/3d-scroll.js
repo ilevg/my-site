@@ -82,25 +82,3 @@ export function setupEventHandlers() {
 }
 setupEventHandlers();
 
-// Contact form - send data to server
-
-// const form = document.querySelector('.frame__form')
-
-// form.addEventListener('submit', async (e) => {
-//     e.preventDefault()
-
-//     const formData = new FormData(form)
-
-//     try {
-//         const response = await fetch('/server/index.php', {
-//             method: 'POST',
-//             body: formData
-//         })
-//         if(response.ok) alert('The message is sent')
-//         else alert('Error sending the message')
-//     }
-//     catch (error) {
-//         console.log('Error:', error)
-//     }
-// })
-
