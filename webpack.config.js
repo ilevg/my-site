@@ -71,7 +71,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'shop.html'),
             filename: 'shop.html',
-            chunks: ['shop', 'scroll', 'products', 'cart_products'],
+            chunks: ['shop', 'scroll', 'products', 'cart_products', 'shop_cart'],
         }),
 
 

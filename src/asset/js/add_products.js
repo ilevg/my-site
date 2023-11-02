@@ -30,7 +30,7 @@ function displayProducts(products) {
                 </div>
             </div>
             <div class="frame frame_bg ">
-                <div class="products frame__content text-${i % 2 === 0 ? 'left' : 'right'}">
+                <div data-id="${product.id}" class="products frame__content text-${i % 2 === 0 ? 'left' : 'right'}">
                     <h3 class="products-name">${product.product_name}</h3>
                     <ul>
                         <li class="frame__shop-price products-price">${product.price}</li>
@@ -41,7 +41,7 @@ function displayProducts(products) {
                 </div>
             </div>
         `
-        lastChild.insertAdjacentHTML('beforebegin', productsHtml);
+        lastChild.insertAdjacentHTML('beforebegin', productsHtml)
     }
 }
 

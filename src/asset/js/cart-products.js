@@ -1,5 +1,11 @@
 export function productsToCart() {
-    console.log('DOMContentLoaded event fired'); // Добавьте этот console.log
+    const cartContainer = document.querySelector('.cart__tbody'),
+        cartTableTitle = cartContainer.querySelector('.cart__table__title'),
+        cartSubtext = cartContainer.querySelector('.cart__subtext'),
+        cartButton = document.querySelector('.cart__button'),
+        cartTotal = cartContainer.querySelector('.cart__total')
+
+
     document.body.addEventListener('click', (event) => {
         const button = event.target.closest('.frame__shop-button') || event.target.closest('.frame__shop-button-left');
         if (button) {
@@ -10,41 +16,74 @@ export function productsToCart() {
     });
 
     const addToCart = async (button) => {
-        const productInfo = getProductInfo(button);
-        //Проверяем, является ли пользователь зарегистрированным
         const isUserLoggedIn = await checkUserLoggedIn()
             .catch(error => {
                 console.error('Error checking user login:', error);
                 return false;
             });
+        
+        const userId = isUserLoggedIn.id;
+        const productInfo = getProductInfo(button, userId);
+        console.log(userId)
+
+        
+
+        cartTableTitle.style.visibility = 'visible';
+        cartTotal.style.visibility = 'visible';
+        cartButton.style.visibility = 'visible';
+        cartSubtext.style.display = 'none';
+        
+        const cartHTML = `
+                <tr>
+                    <td>
+                        <img class="cart__product-img" src="${productInfo.image}" alt="${productInfo.name}">
+                    </td>
+                    <td>
+                        <ul>
+                            <li>${productInfo.name}</li>
+                            <li>${productInfo.description}</li>
+                            <li>${productInfo.size}</li>
+                        </ul>
+                    </td>
+                    <td>€${productInfo.price}</td>
+                    <td>
+                        <img class="cart__delete-icon" src="/img/delete-icon.png" alt="delete">
+                    </td>
+                </tr>  
+        `
+
+        cartTotal.insertAdjacentHTML('beforebegin', cartHTML);
+        //Проверяем, является ли пользователь зарегистрированным
+        
             
         // Если пользователь зарегистрирован, отправляем данные на сервер
         if (isUserLoggedIn) {
-            //sendToServer(productInfo);
-            alert(productInfo)
+            sendToServer(productInfo);
         } else {
             // Если пользователь не зарегистрирован, сохраняем в локальное хранилище
-            //addToLocalStorage(productInfo);
+            addToLocalStorage(productInfo);
             alert('Do not logged in')
         }
     };
 
-    const getProductInfo = (button) => {
-        let productInfo = button.closest('.products');
-        let productName = productInfo.querySelector('.products-name').innerText;
-        let productImg = document.querySelector(`[data-image="${productName}"]`)
+    const getProductInfo = (button, userId) => {
+        const productInfo = button.closest('.products'),
+            productId = productInfo.getAttribute('data-id'),
+            productName = productInfo.querySelector('.products-name').innerText,
+            productImg = document.querySelector(`[data-image="${productName}"]`)
         let productImgUrl;
+
         if (productInfo) {
             let styles = getComputedStyle(productImg)
             productImgUrl = styles.backgroundImage;
-
             let urlMatch = productImgUrl.match(/url\(["']?(.*?)["']?\)/);
             if (urlMatch && urlMatch[1]) {
                 productImgUrl = urlMatch[1];
             }
 
-            console.log(productImgUrl)
             let productInfoArr = {
+                userId: userId,
+                productId: productId,
                 image: productImgUrl,
                 name: productName,
                 price: productInfo.querySelector('.products-price').innerText,
@@ -64,43 +103,46 @@ export function productsToCart() {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-    
-            const data = await response.json();
-            console.log(data);
-            return data;
+            const userData = await response.json();
+            return userData;
         } catch (error) {
             console.error('Error checking user login:', error);
             return false;
         }
     };
 
-    // const addToLocalStorage = (productInfo) => {
-    //     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    //     cart.push(productInfo);
-    //     localStorage.setItem('cart', JSON.stringify(cart));
-    //     updateCartUI(cart);
-    // };
+    const addToLocalStorage = (productInfo) => {
+        if(productInfo.id == 1){}
 
-    // const sendToServer = (productInfo) => {
-    //     // Реализуйте этот метод для отправки информации о товаре на сервер
-    //     // Используйте AJAX или Fetch API для отправки POST-запроса на сервер
-    //     fetch('/server/cart_products.php', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify(productInfo),
-    //     })
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             // Обработайте ответ от сервера (если это необходимо)
-    //         })
-    //         .catch(error => {
-    //             console.error('Error:', error);
-    //         });
-    // };
+        const cart = JSON.parse(localStorage.getItem('cart')) || []; // tttttttttttttttttuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuutttttttttttttttttttt the end
+        cart.push(productInfo);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        console.log('Cart updated:', cart);
+        //updateCartUI(cart);
+    };
+
+    const sendToServer = (productInfo) => {
+        
+        fetch('/server/cart_products_to_db.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(productInfo),
+        })
+            .then(response => response.json())
+            .then(data => {
+                if(data.status == true) {
+                    
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    };
 
     // const updateCartUI = (cart) => {
     //     // Реализуйте этот метод для обновления отображения корзины на странице
     // };
+
 }
