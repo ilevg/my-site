@@ -91,7 +91,7 @@
     }
     &__product-img{
         width: calc(var(--index) * 3.5);
-        padding: calc(var(--index) * .7);
+        padding: calc(var(--index) * .4);
     }
     &__delete-icon{
         width: calc(var(--index) * 1.5);

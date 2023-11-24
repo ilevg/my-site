@@ -1,9 +1,9 @@
-@import "./shop.scss";
+
 body{
-    font-family: var(--font-family);
-    animation: var(--animation);
+    animation: var(--animation-body);
 }
 .collection{
+    font-family: var(--font-family);
     text-align: center;
     margin-left: calc(var(--index) * 7);
     &__title{

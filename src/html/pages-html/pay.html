@@ -28,15 +28,15 @@
                     <th>Shiping method:</th>
                 </tr>
                 <tr>
-                    <td>122</td>
-                    <td>31/08/2023</td>
-                    <td>Blik</td>
-                    <td>inPost(curier)</td>
+                    <td class="pay__order-id">122</td>
+                    <td class="pay__order-date">31/08/2023</td>
+                    <td class="pay__order-payment">Blik</td>
+                    <td class="pay__order-shiping">inPost(curier)</td>
                 </tr>
             </table>
 
 
-            <h3 class="pay__title-second">Our bank details:</h3>
+            <h3 class="pay__title-second">Our pay information:</h3>
             <table class="pay__table-bank">
                 <tr>
                     <th>Bank:</th>
@@ -50,45 +50,34 @@
                     <th>IBAN:</th>
                     <td>PL3242 4344 2432 4343 7676 6786 6786</td>
                 </tr>
+                <tr>
+                    <th>Phone number:</th>
+                    <td>+48675576765</td>
+                </tr>
             </table>
 
             <span class="pay__subtext">The order will be sent after the funds have been credited to our account. Enter the order number in the payment description.</span>
         </div>
 
-
         <div class="checkout__details">
             <div>
-                <div class="checkout__product">
-                    <img class="checkout__product-img" src="/src/asset/img/shop-img/picture-1.png" alt="Raccon">
-                    <div class="checkout__product-description">
-                        <span class="checkout__product-name">Raccon</span>
-                        <span class="checkout__product-span">Oil painting</span>
-                        <span class="checkout__product-span">Size: 100 x 100cm</span>
-                    </div>
-                    <span>€1500</span>
-                </div>
-
-                <div class="checkout__product">
-                    <img class="checkout__product-img" src="/src/asset/img/shop-img/picture-2.png" alt="Raccon">
-                    <div class="checkout__product-description">
-                        <span class="checkout__product-name">Monkey</span>
-                        <span class="checkout__product-span">Oil painting</span>
-                        <span class="checkout__product-span">Size: 100 x 100cm</span>
-                    </div>
-                    <span>€1500</span>
-                </div>
-                <div class="checkout__price">
-                    <span>Subtotal</span>
-                    <span>€1500</span>
-                </div>
-                <div class="checkout__price">
-                    <span>Shiping</span>
-                    <span>€40.99</span>
-                </div>
-                <div class="checkout__price">
-                    <span class="checkout__price-total">Total</span>
-                    <span class="checkout__price-value">€3040.99</span>
-                </div>
+                <table class="checkout__table">
+                    <tr class="checkout__subtotal">
+                        <td>Subtotal</td>
+                        <td></td>
+                        <td class="checkout__subtotal-value">€1500</td>
+                    </tr>
+                    <tr class="checkout__shipping">
+                        <td>Shiping</td>
+                        <td></td>
+                        <td class="checkout__shipping-value">€40.99</td>
+                    </tr>
+                    <tr class="checkout__total">
+                        <td class="checkout__total-title">Total</td>
+                        <td></td>
+                        <td class="checkout__total-value">€3040.99</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </section>

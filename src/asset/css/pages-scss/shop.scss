@@ -1,6 +1,6 @@
 
 body{
-    animation: .5s ease opacity_change;
+    animation: var(--animation-body);
 }
 .frame{
     &__shop-price{
@@ -14,6 +14,7 @@ body{
     }
 }
 .frame__shop-button{
+    font-family: var(--font-family);
     width: calc(var(--index) * 10);
     margin-top: calc(var(--index) * .5);
     padding: 8px;
@@ -25,5 +26,19 @@ body{
     &:hover{
         background-color: var(--primary-color);
         color: var(--secondary-color);
+    }
+}
+.frame__shop-button.added{
+    background: linear-gradient(90deg, rgb(255, 0, 0), rgb(34, 0, 255));
+    &:hover{
+        background: linear-gradient(90deg,rgb(255, 0, 0), rgb(34, 0, 255));
+        color: var(--primary-color);
+    }
+}
+.frame__shop-button.ordered{
+    background-color: var(--paragraph-color);
+    &:hover{
+        background-color: var(--paragraph-color);
+        color: var(--primary-color);
     }
 }

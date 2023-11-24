@@ -5,7 +5,7 @@
 body{
     font-family: var(--font-family);
     overflow: hidden;
-    animation: .5s ease opacity_change;
+    animation: var(--animation-body);
 }
 .layers{
     perspective: 1100px;

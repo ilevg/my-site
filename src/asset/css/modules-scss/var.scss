@@ -1,3 +1,4 @@
+@import "animations.scss";
 :root{
     /*size index:*/
     --index: calc(1vw + 1vh);
@@ -25,7 +26,7 @@
     --transition-bg-color: background-color .3s;
     --transition-transform: transform .3s;
     /* animation:*/
-    --animation-body: .5s ease opacity_change;
+    --animation-body: 1s ease opacity_change;
     /* vars for scroll pages*/
     --gutter: 30px;
     --side-small: 26;

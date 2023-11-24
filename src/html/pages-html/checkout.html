@@ -17,21 +17,21 @@
     <canvas class="particles" data-color="#B99970"></canvas>
     <h2 class="checkout__title">Checkout page</h2>
     <section class="checkout">
-        <div class="checkout__information">
+        <form class="checkout__form" action="./server/checkout_form.php" method="post">
             <div class="checkout__contact">
                 <div class="checkout__contact__header">
                     <h3 class="checkout__title-second">Contact</h3>
                     <span class="checkout__login">Have an account? 
-                        <a href="./login.html" class="checkout__login-link">Log in</a> 
+                        <a href="./login.php" class="checkout__login-link">Log in</a> 
                     </span>
                 </div>
                 <div class="checkout__email">
                     <div class="checkout__email__wrapper">
-                        <input class="checkout__email-input checkout__input" type="email" name="chekcout_email" placeholder="Enter your email">
+                        <input class="checkout__email-input checkout__input" type="email" name="chekcout_email" placeholder="Enter your email" required>
                         <span class="checkout__email-erorr checkout-error">Enter a valid email</span>
                     </div>
                     <div class="checkout__offers__wrapper">
-                        <input class="checkout__email-checkbox" type="checkbox" name="checkout_checkbox_offers" id="checkbox_offers">
+                        <input class="checkout__email-checkbox" type="checkbox" name="checkbox_offers" id="checkbox_offers">
 
                         <label class="checkbox_label" for="checkbox_offers">Email me with news and offers</label>  
                     </div>
@@ -48,38 +48,38 @@
 
                 <div class="checkout__name ">
                     <div class="checkout__fname">
-                        <input type="text" class="checkout__fname-input checkout__input" placeholder="First name">
+                        <input type="text" class="checkout__fname-input checkout__input" placeholder="First name" required name="checkout_fname">
                         <span class="checkout__fname-error checkout-error">Enter a first name
                         </span>
                     </div>
                     <div class="checkout__lname">
-                        <input type="text" class="checkout__lname-input checkout__input" placeholder="Last name">
+                        <input type="text" class="checkout__lname-input checkout__input" placeholder="Last name" name="checkout_lname" required>
                         <span class="checkout__lname-error checkout-error">Enter a last name
                         </span>
                     </div>
                 </div>
 
                 <div class="checkout__address">
-                    <input type="text" class="checkout__address-input checkout__input" placeholder="Address">
+                    <input type="text" class="checkout__address-input checkout__input" placeholder="Address" name="checkout_address" required>
                     <span class="checkout__addres-error checkout-error">Enter an address</span>
                 </div>
 
                 <div class="checkout__postal">
                     <div class="checkout__postal-code">
-                        <input type="text" class="checkout__postal-input checkout__input" placeholder="Postal code">
+                        <input type="text" class="checkout__postal-input checkout__input" placeholder="Postal code" name="checkout_postal" required>
                         <span class="checkout__postal-error checkout-error">Enter a postal code
                         </span>
                     </div>
 
                     <div class="checkout__postal-city">
-                        <input type="text" class="checkout__city-input checkout__input" placeholder="City">
+                        <input type="text" class="checkout__city-input checkout__input" placeholder="City" name="checkout_city" required>
                         <span class="checkout__city-error checkout-error">Enter a city
                         </span>
                     </div>
                 </div>
 
                 <div class="checkout__phone">
-                    <input type="text" class="checkout__phone-input checkout__input" placeholder="Phone">
+                    <input type="text" class="checkout__phone-input checkout__input" placeholder="Phone" name="checkout_phone">
                     <span class="checkout__phone-error checkout-error">Enter a phone</span>
                 </div>
             </div>
@@ -87,15 +87,15 @@
             <div class="checkout__shipping">
                 <h3 class="checkout__title-second">Shiping method</h3>
                 <div class="checkout__input">
-                    <input type="radio" name="checkout__shiping_ua" id="checkout__shiping-ua" class="checkout__shiping-ua">
+                    <input type="radio" name="shipping_method" id="checkout__shiping-ua " class="shipping_method checkout__shiping-ua" value="Nova Poshta: 70.99" required>
                     <label for="checkout__shiping_ua">Nova Poshta: zl70.99</label>  
                 </div>
                 <div class="checkout__input">
-                    <input type="radio" name="checkout__shiping_pl" id="checkout__shiping-pl-cur" class="checkout__shiping-pl-cur">
+                    <input type="radio" name="shipping_method" id="checkout__shiping-pl-cur" class="shipping_method checkout__shiping-pl-cur checkout__shiping-pl" value="inPost(curier): 17.99" required>
                     <label for="checkout__shiping-pl-cur">InPost(curier): zl17.99</label>  
                 </div>
                 <div class="checkout__input">
-                    <input type="radio" name="checkout__shiping_pl" id="checkout__shiping-pl-pacz" class="checkout__shiping-pl-pacz">
+                    <input type="radio" name="shipping_method" id="checkout__shiping-pl-pacz" class="shipping_method checkout__shiping-pl-pacz checkout__shiping-pl" value="InPost(paczkomat): 20.99" required>
                     <label for="checkout__shiping-pl-pacz">InPost(paczkomat): zl20.99</label>  
                 </div>
             </div>
@@ -104,7 +104,7 @@
                 <h3 class="checkout__title-second">Payments</h3>
             
                 <div class="checkout__blik checkout__input">
-                    <input type="radio" name="checkout__payment" id="checkout__blik-input" class="checkout__blik-input" data-description="checkout__blik-description">
+                    <input type="radio" name="payment" value="blik" id="checkout__blik-input" class="checkout__blik-input" data-description="checkout__blik-description" required>
                     <label for="checkout__blik-input">Blik on number</label>
                     
                 </div>
@@ -112,7 +112,7 @@
                     <p>Payment must be sent to phone number. The order will be sent after the funds have been credited to our account. Enter the order number in the payment description.</p>
                 </div>
                 <div class="checkout__card checkout__input">
-                    <input type="radio" name="checkout__payment" id="checkout__card-input" class="checkout__card-input" data-description="checkout__card-description">
+                    <input type="radio" name="payment" value="card" id="checkout__card-input" class="checkout__card-input" data-description="checkout__card-description" required>
                     <label for="checkout__card-input">Credit card</label>
                     
                 </div>
@@ -124,7 +124,7 @@
             <div class="checkout__privacy">
                 <div>
                     <input type="checkbox" name="checkout__privacy" id="checkout__privacy"
-                    class="checkout__privacy-input">
+                    class="checkout__privacy-input" required>
                     
                     <label for="checkout__privacy">I have read and accept the
                         <a href="./privacy.html" class="checkout__privacy-link">privacy policy</a>
@@ -132,44 +132,32 @@
                 </div>
             </div>
             <div class="checkout__button checkout__input">
-                <a href="./pay.html" class="checkout__button-link " type="button">Pay now</a>
+                <button type="submit" class="checkout__button-link">Pay now</button>
             </div>
-            
-        </div>
+            <input type="text" name="user_id" id="user_id" hidden>
+            <input type="text" name="product_id" id="product_id" hidden>
+
+        </form>
         
         <div class="checkout__details">
             <div>
-                <div class="checkout__product">
-                    <img class="checkout__product-img" src="/src/asset/img/shop-img/picture-1.png" alt="Raccon">
-                    <div class="checkout__product-description">
-                        <span class="checkout__product-name">Raccon</span>
-                        <span class="checkout__product-span">Oil painting</span>
-                        <span class="checkout__product-span">Size: 100 x 100cm</span>
-                    </div>
-                    <span>€1500</span>
-                </div>
-
-                <div class="checkout__product">
-                    <img class="checkout__product-img" src="/src/asset/img/shop-img/picture-2.png" alt="Raccon">
-                    <div class="checkout__product-description">
-                        <span class="checkout__product-name">Monkey</span>
-                        <span class="checkout__product-span">Oil painting</span>
-                        <span class="checkout__product-span">Size: 100 x 100cm</span>
-                    </div>
-                    <span>€1500</span>
-                </div>
-                <div class="checkout__price">
-                    <span>Subtotal</span>
-                    <span>€1500</span>
-                </div>
-                <div class="checkout__price">
-                    <span>Shiping</span>
-                    <span>€40.99</span>
-                </div>
-                <div class="checkout__price">
-                    <span class="checkout__price-total">Total</span>
-                    <span class="checkout__price-value">€3040.99</span>
-                </div>
+                <table class="checkout__table">
+                    <tr class="checkout__subtotal">
+                        <td>Subtotal</td>
+                        <td></td>
+                        <td class="checkout__subtotal-value">€10.00</td>
+                    </tr>
+                    <tr class="checkout__shipping">
+                        <td>Shiping</td>
+                        <td></td>
+                        <td class="checkout__shipping-value">€00.00</td>
+                    </tr>
+                    <tr class="checkout__total">
+                        <td class="checkout__total-title">Total</td>
+                        <td></td>
+                        <td class="checkout__total-value">€00.00</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </section>
