@@ -1,3 +1,7 @@
+<!-- <?php
+    require_once __DIR__ . "/server/helpers.php";
+    checkGuest();
+?> -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,11 +21,11 @@
     <h2 class="login__title">Login</h2>
 
     <form class="login" action="./server/login.php" method="post">
-        <input type="email" name="login_email" id="email" placeholder="Email"  required>
-        <input type="password" name="login_password" id="password" placeholder="********" required>
+        <input type="email" name="login_email" id="email" placeholder="Email"  required autocomplete="username">
+        <input type="password" name="login_password" id="password" placeholder="********" required autocomplete="current-password">
         <button type="submit" id="login_button">Sing in</button>
         <span>New Customer?
-            <a href="./register.html">Create account</a>
+            <a href="./register.php">Create account</a>
         </span>
         <a href="./passreset.html">Forgot your password?</a>
     </form>

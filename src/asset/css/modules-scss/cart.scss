@@ -91,7 +91,7 @@
     }
     &__product-img{
         width: calc(var(--index) * 3.5);
-        padding: calc(var(--index) * .7);
+        padding: calc(var(--index) * .4);
     }
     &__delete-icon{
         width: calc(var(--index) * 1.5);
@@ -100,6 +100,9 @@
         &:hover{
             transform: scale(115%);
         }
+    }
+    &__total{
+        height: calc(var(--index) * 1.6);
     }
     &__total td{
         text-align: center;
@@ -134,6 +137,18 @@
             background-color: var(--primary-color);
         }
     }
-    
+    &__subtext{
+        height: calc(var(--index) * 5);
+        line-height: calc(var(--index) * 5);
+    }
+    &__table__title{
+        height: calc(var(--index) * 1.6);
+        line-height: calc(var(--index) * 1.6);
+    }
+    &__table__title, 
+    &__total, 
+    &__button{
+        visibility: hidden;
+    }
 }
 

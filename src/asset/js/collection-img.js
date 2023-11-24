@@ -1,7 +1,6 @@
-import '../css/pages-scss/collection.scss';
+import '../css/pages-scss/collection.scss'
 // open collection imgs
 const body = document.querySelector('body')
-
 function openImg(e) {
     let target = e.target.closest('.collection-img')
     if(!target) return
@@ -12,7 +11,6 @@ function openImg(e) {
     container.classList.toggle('collection__container-img-change')
     body.classList.toggle('collection__body-hidden')
 }
-
 window.addEventListener('click', openImg)
 
 

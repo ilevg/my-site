@@ -10,7 +10,7 @@ body{
     font-size: calc( var(--index) * 8 );
     font-weight: 300;
     line-height: 1.75;
-    animation: .5s ease opacity_change;
+    animation: var(--animation-body);
 }
 .container{
     width: 100%;

@@ -1,7 +1,7 @@
 
 body{
     height: 1600px;
-    animation: .5s ease opacity_change;
+    animation: var(--animation-body);
 }
 .frame{
     &__title{

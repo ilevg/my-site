@@ -25,17 +25,14 @@ module.exports = {
         main: [path.resolve(__dirname, 'src/asset/js', '3d-effects-main.js')],
         scroll: [path.resolve(__dirname, 'src/asset/js', '3d-scroll.js')],
         shop: [path.resolve(__dirname, 'src/asset/js', 'shop.js')],
-        shop_cart: [path.resolve(__dirname, 'src/asset/js', 'shop_cart.js')],
+        products: [path.resolve(__dirname, 'src/asset/js', 'products-shop.js')],
+        collection: [path.resolve(__dirname, 'src/asset/js', 'collection-img.js')],
         profile: [path.resolve(__dirname, 'src/asset/js', 'profile.js')],
-        collection: [path.resolve(__dirname, 'src/asset/js', 'collection.js')],
         checkout: [path.resolve(__dirname, 'src/asset/js', 'checkout.js')],
         '404': [path.resolve(__dirname, 'src/asset/js', '404.js')],
-
-        products: [path.resolve(__dirname, 'src/asset/js', 'add_products.js')],
-        collection_prods: [path.resolve(__dirname, 'src/asset/js', 'collection-prods.js')],
-        cart_products: [path.resolve(__dirname, 'src/asset/js', 'cart-products.js')],
-
-
+        particles: [path.resolve(__dirname, 'src/libs', 'particles.js')],
+        products_cart_second: [path.resolve(__dirname, 'src/asset/js', 'products-cart-second.js')],
+        collection_prods: [path.resolve(__dirname, 'src/asset/js', 'products-collection.js')],
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -46,7 +43,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'main.html'),
-            chunks: ['main']
+            chunks: ['main', 'particles']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/modules-html', 'header.html'),
@@ -56,22 +53,22 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'about.html'),
             filename: 'about.html',
-            chunks: ['scroll']
+            chunks: ['scroll', 'particles']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'works.html'),
             filename: 'works.html',
-            chunks: ['scroll']
+            chunks: ['scroll', 'particles']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'contact.html'),
             filename: 'contact.html',
-            chunks: ['scroll']
+            chunks: ['scroll', 'particles']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'shop.html'),
             filename: 'shop.html',
-            chunks: ['shop', 'scroll', 'products', 'cart_products'],
+            chunks: ['shop', 'products', 'particles'],
         }),
 
 
@@ -83,7 +80,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'collection.html'),
             filename: 'collection.html',
-            chunks: ['shop_cart', 'collection', 'collection_prods']
+            chunks: ['shop', 'collection', 'collection_prods', 'particles']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/modules-html', 'footer.html'),
@@ -93,52 +90,52 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'pay.html'),
             filename: 'pay.html',
-            chunks: ['shop_cart']
+            chunks: ['shop', 'particles', 'checkout']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'checkout.html'),
             filename: 'checkout.html',
-            chunks: ['shop_cart', 'checkout']
+            chunks: ['shop', 'checkout', 'particles']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'login.html'),
             filename: 'login.html',
-            chunks: ['shop_cart', 'login']
+            chunks: ['shop', 'products_cart_second', 'login', 'particles']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'passreset.html'),
             filename: 'passreset.html',
-            chunks: ['shop_cart']
+            chunks: ['shop', 'products_cart_second', 'particles']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'payments.html'),
             filename: 'payments.html',
-            chunks: ['shop_cart']
+            chunks: ['shop', 'products_cart_second', 'particles']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'privacy.html'),
             filename: 'privacy.html',
-            chunks: ['shop_cart']
+            chunks: ['shop', 'products_cart_second', 'particles']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'profile.html'),
             filename: 'profile.html',
-            chunks: ['profile', 'shop_cart']
+            chunks: ['profile', 'products_cart_second', 'shop', 'particles']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'register.html'),
             filename: 'register.html',
-            chunks: ['shop_cart', 'registration']
+            chunks: ['shop', 'products_cart_second', 'registration', 'particles']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', 'return.html'),
             filename: 'return.html',
-            chunks: ['shop_cart']
+            chunks: ['shop', 'products_cart_second', 'particles']
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/html/pages-html', '404.html'),
             filename: '404.html',
-            chunks: ['404']
+            chunks: ['404', 'particles']
         }),
 
 

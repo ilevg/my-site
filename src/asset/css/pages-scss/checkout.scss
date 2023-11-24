@@ -21,7 +21,7 @@ body{
     min-height: 80vh;
     font-family: var(--font-family);
 
-    &__information{
+    &__form{
         width: 100%;
         margin: calc(var(--index) * .5);
         font-size: var(--font-size-small);
@@ -38,6 +38,9 @@ body{
         &::placeholder{
             color: (var(--paragraph-color));
         }
+    }
+    &__email-input::placeholder{
+        color: yellow;
     }
     
     &__email-input,
@@ -181,27 +184,9 @@ body{
     }
     /*style for order details*/
     &__details{
-        width: calc(var(--index) * 20);
         margin: 0 0 0 auto;
         border-left: var(--border-all);
         background-color: var(--shop-elem-bg);
-    }
-    &__product{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: calc(var(--index) * .5);
-        padding-bottom: calc(var(--index) * .5);
-        border-bottom: var(--border-all);
-    }
-    &__product-span{
-        display: block;
-        color: var(--primary-color);
-        font-size: calc(var(--index) * .5);
-        line-height: 1.2;
-    }
-    &__product-img{
-        width: calc(var(--index) * 2.5);
     }
     &__product-name{
         font-size: var(--font-size-medium);
@@ -209,14 +194,47 @@ body{
         color: var(--primary-color);
     }
     &__price{
-        display: flex;
-        justify-content: space-between;
-        margin: calc(var(--index) * .5);
         font-size: var(--font-size-small);
     }
     &__price-total, &__price-value{
         font-size: var(--font-size-medium);
         font-weight: 600;
+    }
+    &__title{
+        font-size: var(--font-size-large);
+        border-bottom: var(--border-all);;
+        padding-bottom: calc(var(--index) * .5);
+    }
+    &__table{
+        margin: calc(var(--index) * .8);
+    }
+    &__table tr{
+        width: 100%;
+        font-size: var(--font-size-small);
+        border-bottom: var(--border-all);;
+    }
+    &__table td{
+        padding: calc(var(--index) * .3) calc(var(--index) * .3);
+    }
+    &__table li, &__table td{
+        font-size: var(--font-size-small);
+        color: var(--paragraph-color);
+        text-align: center;
+        vertical-align: middle;
+        margin-right: calc(var(--index) * .1);
+    }
+    &__table ul li:first-child{
+        color: var(--primary-color);
+        font-size: var(--font-size-small);
+        font-weight: 600;
+    }
+    &__product-img{
+        width: calc(var(--index) * 3.5);
+        padding: calc(var(--index) * .4);
+    }
+    td.checkout__total-title, td.checkout__total-value{
+        font-weight: 600;
+        color: var(--primary-color);
     }
 }
 

@@ -1,6 +1,6 @@
 <div class="cart">
     <div class="cart__login">
-        <a href="./login.html" class="cart__login-link">
+        <a href="./login.php" class="cart__login-link">
             <img class="cart__login-icon" src="/src/asset/img/shop-img/login-icon.png" alt="login">
             <span class="cart__login-text">login</span>
         </a>
@@ -12,74 +12,28 @@
         <div class="cart__wrapper">
             <h2 class="cart__title">Cart</h2>
             <table class="cart__table">
-                <tr>
-                    <th>Paintings</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td>
-                        <img class="cart__product-img" src="/src/asset/img/shop-img/picture-1.png" alt="Raccon">
-                    </td>
-                    <td>
-                        <ul>
-                            <li>Raccon</li>
-                            <li>Oil painting</li>
-                            <li>Size: 100 x 100cm</li>
-                        </ul>
-                    </td>
-                    <td>€1500</td>
-                    <td>
-                        <img class="cart__delete-icon" src="/src/asset/img/shop-img/delete-icon.png" alt="delete">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img class="cart__product-img" src="/src/asset/img/shop-img/picture-2.png" alt="Monkey">
-                    </td>
-                    <td>
-                        <ul>
-                            <li>Monkey</li>
-                            <li>Oil painting</li>
-                            <li>Size: 100 x 100cm</li>
-                        </ul>
-                    </td>
-                    <td>€1300</td>
-                    <td>
-                        <img class="cart__delete-icon" src="/src/asset/img/shop-img/delete-icon.png" alt="delete">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img class="cart__product-img" src="/src/asset/img/shop-img/picture-3.png" alt="Raccon">
-                    </td>
-                    <td>
-                        <ul>
-                            <li>Raccon</li>
-                            <li>Oil painting</li>
-                            <li>Size: 100 x 100cm</li>
-                        </ul>
-                    </td>
-                    <td>€1500</td>
-                    <td>
-                        <img class="cart__delete-icon" src="/src/asset/img/shop-img/delete-icon.png" alt="delete">
-                    </td>
-                </tr>
-                <tr class="cart__total">
-                    <td></td>
-                    <td>Total:</td>
-                    <td><span class="cart__total-price"> €2800</span></td>
-                    <td></td>
-                </tr>
+                <tbody class="cart__tbody">
+                    <tr class="cart__table__title">
+                        <th>Paintings</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                    <tr class="cart__subtext">
+                        <td colspan="4">The shopping cart is empty!</td>
+                    </tr>
+                    
+                    <tr class="cart__total">
+                        <td></td>
+                        <td>Total:</td>
+                        <td><span class="cart__total-price">0</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
             </table>
-            
             <div class="cart__button">
                 <a class="cart__button-link" href="./checkout.html">Checkout page</a>
             </div>
         </div>
     </div>
 </div>
-
-
-<!-- ----------------------------- -->

@@ -1,5 +1,6 @@
 
 /* Style for profile.html */
+
 body{
     animation: var(--animation-body);
 }
@@ -51,6 +52,7 @@ body{
         background-color: var(--transparent);
         color: var(--primary-color);
         margin-bottom: calc(var(--index) * .5);
+
     }
     &__name, 
     &__wrapper{
@@ -60,7 +62,7 @@ body{
     &__fname input, 
     &__lname input,
     &__post input,
-    &__city__wrapper input{
+    &__city input{
         width: calc(25vw - calc(var(--index) * .25));
     }
 
@@ -136,6 +138,7 @@ body{
         margin-bottom: calc(var(--index) * .5);
     }
     &__button{
+        width: calc(var(--index) * 10);
         background-color: rgba(48, 92, 123, 0.4);
         color: var(--primary-color);
         border-radius:var(--border--radius);;
@@ -186,6 +189,10 @@ body{
     &__img{
         width: calc(var(--index) * 2.5);
         padding: 15px;
+    }
+    &__date{
+        display: inline-table;
+        width: calc(var(--index) * 4);
     }
 }
 
