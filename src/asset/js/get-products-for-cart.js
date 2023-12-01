@@ -9,7 +9,8 @@ export async function getProductsForCart(
     subtext = null, 
     totalPrice = null, 
     callback = null, 
-    productsList = null,) {
+    productsList = null
+) {
 
     function changeStyleprodButton(productId) {
         if (productsList) {
@@ -50,14 +51,12 @@ export async function getProductsForCart(
                                     <li>${product.size}</li>
                                 </ul>
                             </td>
-                            <td>€${product.price}</td>
+                            <td class="cart__product__price-value">€${product.price}</td>
                             <td>
-                                <img class="cart__delete-icon delete-icon" src="/img/delete-icon.png" alt="delete">
+                                <img class="cart__delete-icon delete-icon" src="/img/delete-icon.webp" alt="delete">
                             </td>
                         </tr>`;
 
-                        
-                        
                     // Insert before the cartTotal element
                     if (tableTitle) {
                         tableTitle.style.visibility = 'visible';
@@ -65,18 +64,18 @@ export async function getProductsForCart(
                         button.style.visibility = 'visible';
                         subtext.style.display = 'none';
                     }
-                    
+
                     total.insertAdjacentHTML('beforebegin', HTML);
                 }
             });
-            
+
+            totalPrice.innerHTML = '€' + cartState.totalPriceValue;
         } catch (error) {
             console.error('Error fetching products:', error);
         }
-        totalPrice.innerHTML = '€' + cartState.totalPriceValue;
     }
 
-    getProductsFromDB();
+    await getProductsFromDB();
 
     async function getProductsFromLS() {
         const isUserLoggedIn = await callback();
@@ -87,7 +86,7 @@ export async function getProductsForCart(
                     changeStyleprodButton(product.productId, productsList);
                     cartState.totalPriceValue += parseInt(product.price);
                     const HTML = `
-                        <tr class="products" data-product="${product.productId}" data-user = "0">
+                        <tr class="products" data-product="${product.productId}" data-user="0">
                             <td>
                                 <img class="cart__product-img" src="${product.image}" alt="${product.name}">
                             </td>
@@ -98,19 +97,20 @@ export async function getProductsForCart(
                                     <li>${product.size}</li>
                                 </ul>
                             </td>
-                            <td>€${product.price}</td>
-                            
+                            <td class="cart__product__price-value">€${product.price}</td>
                             <td>
-                                <img class="cart__delete-icon delete-icon" src="/img/delete-icon.png" alt="delete">
+                                <img class="cart__delete-icon delete-icon" src="/img/delete-icon.webp" alt="delete">
                             </td>
                         </tr>`;
+
                     // Insert before the cartTotal element
-                    if(tableTitle) {
+                    if (tableTitle) {
                         tableTitle.style.visibility = 'visible';
                         total.style.visibility = 'visible';
                         button.style.visibility = 'visible';
                         subtext.style.display = 'none';
                     }
+
                     total.insertAdjacentHTML('beforebegin', HTML);
                 });
                 totalPrice.innerHTML = '€' + cartState.totalPriceValue;
@@ -118,5 +118,5 @@ export async function getProductsForCart(
         }
     }
 
-    getProductsFromLS()
+    await getProductsFromLS();
 }

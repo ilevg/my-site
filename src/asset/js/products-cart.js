@@ -27,7 +27,7 @@ export function productsToCart() {
 
         // Если пользователь зарегистрирован, отправляем данные на сервер
         const cartHTML = `
-            <tr>
+            <tr class="products" data-product="${productInfo.productId}" data-user="${productInfo.userId}">
                 <td>
                     <img class="cart__product-img" src="${productInfo.image}" alt="${productInfo.name}">
                 </td>
@@ -38,9 +38,9 @@ export function productsToCart() {
                         <li>${productInfo.size}</li>
                     </ul>
                 </td>
-                <td>€${productInfo.price}</td>
+                <td class="cart__product__price-value">€${productInfo.price}</td>
                 <td>
-                    <img class="cart__delete-icon" src="/img/delete-icon.png" alt="delete">
+                    <img class="cart__delete-icon" src="/img/delete-icon.webp" alt="delete">
                 </td>
             </tr>`;
 

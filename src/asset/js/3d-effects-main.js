@@ -1,13 +1,7 @@
 import '../css/modules-scss/reset.css'
 import '../css/pages-scss/main.scss'
 
-import '../img/2222.jpg'
-import '../img/99.jpg'
-import '../../asset/img/2222.jpg'
-import '../../asset/img/layer-6.png'
-import '../../asset/img/layers-3-3.png'
-import '../../asset/img/layer-4-4.png'
-import '../../asset/img/layer-5-5.png'
+import '../../asset/img/layer-6.webp'
 
 import {loadSection} from './add-sections.js'
 import {headerFunction} from './navigation.js'

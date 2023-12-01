@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My Account</title>
 
-        <link rel="shortcut icon" href="/src/asset/img/logo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="/src/asset/img/logo.webp" type="image/x-icon">
     </head>
 
 <body>
@@ -55,8 +55,8 @@
                 <span class="profile-popup__phone-error">Enter a phone</span>
             </div>
             <div class="profile-popup__buttons">
-                <button class="profile-popup__button-edit" type="button">Edit</button>
-                <button class="profile-popup__button-cancel" type="button">Cancel</button>
+                <button class="profile-popup__button-edit" type="button" aria-label="Edit">Edit</button>
+                <button class="profile-popup__button-cancel" type="button" aria-label="Cancel">Cancel</button>
             </div>
         </div>
     </div>
@@ -80,11 +80,10 @@
                 </div>
                 <span class="profile__phone">+4903433434</span>
                 
-                <button class="profile__button">Edit</button>
-
-
-                
-                
+                <button class="profile__button" aria-label="Edit">Edit</button>
+                <form action="./server/logout.php" method="post"> 
+                    <button role="button" class="profile__button profile__button-logout" aria-label="Logout">Logout</button>
+                </form>
             </div>
         </div>
         <div class="profile-orders">

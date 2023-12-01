@@ -15,7 +15,7 @@ module.exports = {
         chunkIds: 'named',
     },
     devServer: {
-        port: 4000,
+        port: 8080,
         open: true,
         static: {
             directory: path.resolve(__dirname, 'dist'), // Указываем директорию, где находятся статические файлы
