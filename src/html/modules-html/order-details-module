@@ -1,7 +1,7 @@
 <div class="checkout__order-details">
     <div>
         <div class="checkout__order_product">
-            <img class="checkout__order_img" src="/src/asset/img/shop-img/picture-1.png" alt="Raccon">
+            <img class="checkout__order_img" src="/src/asset/img/shop-img/picture-1.webp" alt="Raccon">
             <div class="checkout__order_description">
                 <span class="checkout__order_name">Raccon</span>
                 <span>Oil painting</span>
@@ -11,7 +11,7 @@
         </div>
 
         <div class="checkout__order_product">
-            <img class="checkout__order_img" src="/src/asset/img/shop-img/picture-2.png" alt="Raccon">
+            <img class="checkout__order_img" src="/src/asset/img/shop-img/picture-2.webp" alt="Raccon">
             <div class="checkout__order_description">
                 <span class="checkout__order_name">Monkey</span>
                 <span>Oil painting</span>

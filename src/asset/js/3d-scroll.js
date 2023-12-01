@@ -1,8 +1,8 @@
 import {loadSection} from './add-sections.js'
 import {headerFunction} from './navigation.js'
 
-import '../../asset/img/about-1.jpg'
-import '../../asset/img/about-2.jpg'
+import '../../asset/img/about-1.webp'
+import '../../asset/img/about-2.webp'
 
 import '../css/pages-scss/scroll.scss'
 import '../css/pages-scss/contact.scss'

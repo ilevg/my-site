@@ -45,7 +45,7 @@ body{
         font-size: calc(var(--index) * 2);
     }
     & input{
-        padding: calc(var(--index) * .3);
+        padding-left: calc(var(--index) * .5);
         font-size: var(--font-size-medium);
         border: var(--border-all);
         border-radius: var(--border--radius);
@@ -79,7 +79,7 @@ body{
     &__button-edit,
     &__button-cancel{
         width: 100%;
-        padding: calc(var(--index) * .3);
+        padding: calc(var(--index) * .1);
         border: var(--border-all);
         border-radius: var(--border--radius);
         color: var(--secondary-color);
@@ -138,6 +138,7 @@ body{
         margin-bottom: calc(var(--index) * .5);
     }
     &__button{
+        margin-top: calc(var(--index) * .3);
         width: calc(var(--index) * 10);
         background-color: rgba(48, 92, 123, 0.4);
         color: var(--primary-color);

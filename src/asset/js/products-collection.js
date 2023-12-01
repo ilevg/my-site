@@ -1,6 +1,7 @@
 //add cart 
 import {productsToCart} from './products-cart.js'
 import { checkUserLoggedIn } from './check-user-logged-in.js'
+import {removeCartProduct} from './product-cart-remove.js'
 
 import {loadSection} from './add-sections.js'
 import {cartVisible} from './shop.js'
@@ -47,7 +48,7 @@ function displayProducts() {
                         <li class="products-description">${product.description}</li>
                         <li class="products-size">Size: ${product.size}cm</li>
                     </ul>
-                <button class="frame__shop-button ${product.ordered? product.ordered : ''}" type="button">Add to cart</button>
+                <button class="frame__shop-button ${product.ordered? product.ordered : ''}" type="button" aria-label="Add to cart">Add to cart</button>
             </div>
         `
         container.insertAdjacentHTML('beforeend', productsHtml)
@@ -116,6 +117,12 @@ function getProducts() {
             disabledOrderedButton()
         })
         .then(() => productsToCart())
+        .then(() => {
+            const cartWrapper = document.querySelector('.cart__wrapper')
+            cartWrapper.addEventListener('click', (e) => {
+                removeCartProduct(e, checkUserLoggedIn)
+            })
+        })
         .catch(error => console.error('Error fetching products: ', error))
 }
 
@@ -145,7 +152,7 @@ async function changeAddedButton(callback) {
             const products = await response.json()
             products.forEach(product => {
                 if (product.user_id == userId) {
-                    cartState.totalPriceValue += parseInt(product.price)
+                    // cartState.totalPriceValue += parseInt(product.price)
                     changeStyleprodButton(product.product_id, productsList)
                 }
             })
